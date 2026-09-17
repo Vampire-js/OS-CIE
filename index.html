@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer System Assessment Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Operating Systems Internal Assessment</p>
+          <h1>System &amp; Memory Locality Dashboard</h1>
+          <p id="capture-time" class="subtitle">Loading measurements...</p>
+        </div>
+        <div id="live-badge" class="live-badge">
+          <span></span>
+          <strong>Live</strong>
+          <small id="live-status">connecting...</small>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="System summary">
+        <article class="card accent-blue">
+          <p class="card-label">Processor</p>
+          <h2 id="cpu-model">—</h2>
+          <p class="live-metric"><strong id="cpu-live">—</strong> current CPU usage</p>
+          <p id="cpu-detail" class="metric-detail">—</p>
+        </article>
+        <article class="card accent-purple">
+          <p class="card-label">Architecture / ISA</p>
+          <h2 id="architecture">—</h2>
+          <p id="isa-detail" class="metric-detail">—</p>
+        </article>
+        <article class="card accent-green">
+          <p class="card-label">Memory usage</p>
+          <h2 id="memory-used">—</h2>
+          <div class="progress-track"><div id="memory-bar" class="progress-fill"></div></div>
+          <p id="memory-detail" class="metric-detail">—</p>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel locality-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="card-label">Cache locality experiment</p>
+              <h2>Row-major vs column-major traversal</h2>
+            </div>
+            <div id="ratio-pill" class="ratio-pill">—</div>
+          </div>
+          <p class="explanation">
+            C stores each row contiguously. Row-major traversal follows nearby addresses,
+            while column-major traversal jumps by one full row and causes more cache misses.
+          </p>
+          <div id="timing-chart" class="timing-chart"></div>
+          <div id="experiment-meta" class="experiment-meta"></div>
+          <details>
+            <summary>Individual trial timings</summary>
+            <div id="trial-table"></div>
+          </details>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="card-label">Process snapshot</p>
+              <h2>Top 5 by CPU usage</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>PID</th>
+                  <th>Command</th>
+                  <th>State</th>
+                  <th>CPU</th>
+                  <th>Memory</th>
+                </tr>
+              </thead>
+              <tbody id="process-table"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel evidence-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="card-label">Reproducibility</p>
+            <h2>Commands and saved evidence</h2>
+          </div>
+        </div>
+        <div class="evidence-grid">
+          <div>
+            <h3>Refresh every measurement</h3>
+            <pre><code>./run.sh
+python3 server.py</code></pre>
+          </div>
+          <div>
+            <h3>Commands executed</h3>
+            <ol id="command-list"></ol>
+          </div>
+          <div>
+            <h3>Raw output files</h3>
+            <ul id="raw-file-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

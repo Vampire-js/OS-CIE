@@ -1,0 +1,137 @@
+{
+  "captured_at": "2026-09-17T21:52:01+05:30",
+  "cpu": {
+    "architecture": "x86_64",
+    "op_modes": "32-bit, 64-bit",
+    "byte_order": "Little Endian",
+    "model": "12th Gen Intel(R) Core(TM) i5-12450H",
+    "logical_cpus": "12",
+    "cores_per_socket": "8",
+    "threads_per_core": "2",
+    "sockets": "1",
+    "max_mhz": "4400.0000",
+    "l1d_cache": "320 KiB (8 instances)",
+    "l2_cache": "7 MiB (5 instances)",
+    "l3_cache": "12 MiB (1 instance)",
+    "isa_extensions": [
+      "sse",
+      "sse2",
+      "sse4_1",
+      "sse4_2",
+      "avx",
+      "avx2",
+      "fma",
+      "aes"
+    ]
+  },
+  "memory": {
+    "total": "15Gi",
+    "used": "9.4Gi",
+    "free": "1.4Gi",
+    "shared": "1.8Gi",
+    "buff_cache": "7.4Gi",
+    "available": "5.9Gi",
+    "used_percent": 61.4,
+    "swap_total": "15Gi",
+    "swap_used": "0B",
+    "swap_free": "15Gi"
+  },
+  "processes": [
+    {
+      "pid": 2305,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 16.7,
+      "memory_percent": 1.1,
+      "time": "61:06.70",
+      "command": "cosmic-comp"
+    },
+    {
+      "pid": 31536,
+      "user": "vampire+",
+      "state_code": "R",
+      "state": "Running",
+      "cpu_percent": 16.7,
+      "memory_percent": 0.0,
+      "time": "0:00.03",
+      "command": "top"
+    },
+    {
+      "pid": 2884,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 8.3,
+      "memory_percent": 1.2,
+      "time": "24:09.07",
+      "command": "mpvpaper"
+    },
+    {
+      "pid": 28483,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 8.3,
+      "memory_percent": 0.8,
+      "time": "1:32.52",
+      "command": "cosmic-term"
+    },
+    {
+      "pid": 30209,
+      "user": "root",
+      "state_code": "I",
+      "state": "Idle kernel thread",
+      "cpu_percent": 8.3,
+      "memory_percent": 0.0,
+      "time": "0:06.39",
+      "command": "kworker/u48:1-i915"
+    }
+  ],
+  "locality": {
+    "matrix_size": 4096,
+    "element_count": 16777216,
+    "matrix_bytes": 67108864,
+    "trials": 7,
+    "row_major_ms": [
+      13.502563,
+      20.530401,
+      14.684977,
+      15.594544,
+      14.373776,
+      11.805064,
+      10.790532
+    ],
+    "column_major_ms": [
+      452.409195,
+      466.269798,
+      463.307713,
+      482.207285,
+      460.224659,
+      416.591919,
+      264.166637
+    ],
+    "row_median_ms": 14.373776,
+    "column_median_ms": 460.224659,
+    "column_to_row_ratio": 32.018355,
+    "checksum": 2097144125
+  },
+  "commands": [
+    "lscpu > data/lscpu.txt",
+    "free -h > data/free-h.txt",
+    "top -b -n 1 -w 512 > data/top.txt",
+    "ps -eLf > data/ps-eLf.txt",
+    "strace -c -o data/strace-c.txt /bin/ls data > data/strace-command-output.txt",
+    "gcc -O2 -std=c11 -Wall -Wextra -pedantic locality.c -o bin/locality",
+    "./bin/locality --size 4096 --trials 7 > data/locality.json",
+    "python3 generate_results.py"
+  ],
+  "raw_files": [
+    "lscpu.txt",
+    "free-h.txt",
+    "top.txt",
+    "ps-eLf.txt",
+    "strace-c.txt",
+    "locality.json"
+  ]
+}

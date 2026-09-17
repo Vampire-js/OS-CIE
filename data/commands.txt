@@ -1,0 +1,8 @@
+lscpu > data/lscpu.txt
+free -h > data/free-h.txt
+top -b -n 1 -w 512 > data/top.txt
+ps -eLf > data/ps-eLf.txt
+strace -c -o data/strace-c.txt /bin/ls data > data/strace-command-output.txt
+gcc -O2 -std=c11 -Wall -Wextra -pedantic locality.c -o bin/locality
+./bin/locality --size 4096 --trials 7 > data/locality.json
+python3 generate_results.py
