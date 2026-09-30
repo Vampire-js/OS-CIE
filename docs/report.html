@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>System Detective Report</title>
+  <style>
+    @page { size: A4; margin: 13mm 16mm 14mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #171717;
+      font: 9.35pt/1.34 "Noto Sans", Arial, sans-serif;
+    }
+    .page { break-after: page; }
+    .page:last-child { break-after: auto; }
+    h1 { margin: 0 0 2mm; font: 700 19pt/1.1 "Noto Serif", serif; }
+    h2 { margin: 4mm 0 1.5mm; font: 700 12.8pt/1.2 "Noto Serif", serif; }
+    p { margin: 0 0 2.2mm; text-align: justify; }
+    .meta {
+      margin-bottom: 4mm;
+      padding-bottom: 2.2mm;
+      border-bottom: 1px solid #888;
+      font-size: 8.7pt;
+    }
+    .figure { margin: 3mm 0 3.5mm; }
+    .terminal {
+      overflow: hidden;
+      border: 1px solid #343a46;
+      border-radius: 5px;
+      color: #e6edf3;
+      background: #0d1117;
+      box-shadow: 0 2px 5px #0003;
+    }
+    .terminal-bar {
+      padding: 1.5mm 2.5mm;
+      color: #aeb8c5;
+      background: #20262f;
+      font-size: 7.5pt;
+    }
+    .dots { color: #ff5f56; letter-spacing: 1px; }
+    pre {
+      margin: 0;
+      padding: 2.6mm 3mm;
+      white-space: pre-wrap;
+      font: 7.25pt/1.25 "DejaVu Sans Mono", monospace;
+    }
+    mark { color: #161616; background: #ffe782; }
+    figcaption {
+      margin-top: 1.3mm;
+      color: #404040;
+      font: italic 7.8pt/1.3 "Noto Serif", serif;
+    }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.4mm;
+      margin: 2.4mm 0 3mm;
+    }
+    .metric {
+      padding: 2.5mm;
+      border: 1px solid #cad1da;
+      border-radius: 4px;
+      background: #f4f7fa;
+      text-align: center;
+    }
+    .metric strong { display: block; color: #174c7b; font-size: 12pt; }
+    table { width: 100%; border-collapse: collapse; font-size: 8pt; }
+    th, td { padding: 1.35mm 1.8mm; border: 1px solid #aeb7c2; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    th { color: white; background: #244a70; }
+    tr:nth-child(even) { background: #f0f4f8; }
+    .chart { margin: 3mm 0; }
+    .bar-label { display: flex; justify-content: space-between; margin: 1.5mm 0 .7mm; font-weight: 700; }
+    .bar-track { height: 7mm; border-radius: 3px; background: #e5e9ee; overflow: hidden; }
+    .bar { height: 100%; min-width: 3px; }
+    .row { width: 3.51%; background: #3988d4; }
+    .column { width: 100%; background: #e58a2c; }
+    .dashboard {
+      width: 100%;
+      max-height: 142mm;
+      object-fit: cover;
+      object-position: top;
+      border: 1px solid #303846;
+      border-radius: 5px;
+    }
+    .repro {
+      padding: 2.5mm 3mm;
+      border-left: 3px solid #244a70;
+      background: #f2f5f8;
+      white-space: pre-line;
+      font: 7.7pt/1.35 "DejaVu Sans Mono", monospace;
+    }
+    .small { font-size: 8.2pt; }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <h1>System Detective</h1>
+    <div class="meta">CIE-1, Computer Organisation &amp; Operating Systems (CO1) | TE IT | Roll No. 33215, Name Adwaiy Deshpande | Submitted 29 September 2026</div>
+
+    <h2>1. The machine under inspection</h2>
+    <p>Every number in this report came from one physical laptop running 64-bit Linux: a 12th Gen Intel Core i5-12450H system with 15 GiB of usable memory. The machine has a hybrid processor, so its eight physical cores do not all expose the same number of hardware threads. Four performance cores provide two threads each and four efficiency cores provide one each, giving 12 logical CPUs. All commands are reproducible, and the raw output is saved in <code>data/</code> rather than copied into the dashboard by hand.</p>
+
+    <figure class="figure">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="dots">● ● ●</span>&nbsp;&nbsp; lscpu</div>
+        <pre>$ lscpu | grep -E 'Architecture|Address sizes|Byte Order|CPU\(s\)|Model name|Thread|Core|L1d|L2|L3'
+<mark>Architecture:             x86_64</mark>
+Address sizes:            39 bits physical, 48 bits virtual
+<mark>Byte Order:               Little Endian</mark>
+CPU(s):                   12
+Model name:               12th Gen Intel(R) Core(TM) i5-12450H
+Thread(s) per core:       2
+<mark>Core(s) per socket:       8</mark>
+L1d cache:                320 KiB (8 instances)
+L2 cache:                 7 MiB (5 instances)
+L3 cache:                 12 MiB (1 instance)</pre>
+      </div>
+      <figcaption>Figure 1. The captured <code>lscpu</code> fields: x86_64, little-endian byte order, eight cores and twelve logical CPUs.</figcaption>
+    </figure>
+
+    <h2>2. Instruction set and what it tells me</h2>
+    <p>The ISA is x86_64: a 64-bit, little-endian, CISC instruction set with variable-length instructions. Little-endian means the least significant byte of a multi-byte value is stored at the lowest address, so integer 1 appears as <code>01 00 00 00</code> in memory. The address-size line reports 39 physical and 48 virtual bits. The virtual address space visible to a process is therefore much larger than the installed RAM; paging and virtual memory create that abstraction.</p>
+    <p>The flags include SSE, SSE2, SSE4.1, SSE4.2, AVX, AVX2, FMA and AES. AVX2 can operate on 256 bits at once, but vectorisation is most effective when data is contiguous. That connects the ISA directly to the locality experiment: row-major traversal presents adjacent integers to the core, while column-major traversal presents a 16 KiB stride. The 64 MiB matrix is far larger than the 12 MiB L3 cache, which prevents the full working set from remaining cached.</p>
+
+    <h2>3. Memory at the moment of capture</h2>
+    <figure class="figure">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="dots">● ● ●</span>&nbsp;&nbsp; free -h</div>
+        <pre>$ free -h
+               total        used        free      shared  buff/cache   available
+<mark>Mem:            15Gi       7.5Gi       4.0Gi       914Mi       6.0Gi       7.8Gi</mark>
+<mark>Swap:           15Gi          0B        15Gi</mark></pre>
+      </div>
+      <figcaption>Figure 2. Memory captured at 17:14 on 29 September 2026. The kernel estimated 7.8 GiB available; configured swap was unused.</figcaption>
+    </figure>
+    <p>The important distinction is between <em>free</em> and <em>available</em>. Free counts currently unused pages. Available also includes cache pages that the kernel expects it can reclaim without swapping. Here only 4.0 GiB was completely free, but 7.8 GiB was available to new programs. The full 6.0 GiB buff/cache value cannot simply be added to free because some cached and kernel memory is not immediately reclaimable. Unlike the sample machine, this laptop has 15 GiB of swap configured, although none was in use during capture.</p>
+  </section>
+
+  <section class="page">
+    <h2>4. Processes, threads and states</h2>
+    <p><code>ps -eLf</code> prints one row per thread instead of one row per process. In the capture, PID 30407 appeared repeatedly with different lightweight-process IDs and an NLWP value of 64 in the excerpt below. The PID remains the same because the threads belong to one process; LWP changes because each thread is an independently schedulable execution context. They share the process address space and open files, making communication cheaper than between separate processes but requiring synchronisation around shared data.</p>
+
+    <figure class="figure">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="dots">● ● ●</span>&nbsp;&nbsp; ps -eLf (saved capture excerpt)</div>
+        <pre>UID       PID    PPID    LWP  C NLWP STIME TTY       TIME CMD
+vampire+ 30407  30396  30407 34   64 17:11 pts/0 00:01:23 copilot
+vampire+ 30407  30396  30408  0   64 17:11 pts/0 00:00:00 copilot
+vampire+ 30407  30396  30409  7   64 17:11 pts/0 00:00:17 copilot
+vampire+ 30407  30396  30410  7   64 17:11 pts/0 00:00:17 copilot
+vampire+ 30407  30396  30411  7   64 17:11 pts/0 00:00:17 copilot
+vampire+ 30407  30396  30412  7   64 17:11 pts/0 00:00:17 copilot</pre>
+      </div>
+      <figcaption>Figure 3. One process with several LWPs. The same PID and different LWP values expose the process/thread distinction.</figcaption>
+    </figure>
+
+    <p>The primary state letter <strong>R</strong> means running or runnable, <strong>S</strong> means interruptible sleep while waiting for an event, <strong>I</strong> identifies an idle kernel thread, and <strong>D</strong> is uninterruptible sleep, usually while the kernel waits for I/O. Most processes in a lightly loaded desktop are in S because they spend more time waiting than executing. A separate <code>ps -eo pid,stat,comm</code> view supplies these state codes; the <code>-eLf</code> view in Figure 3 is specifically for exposing threads.</p>
+
+    <figure class="figure">
+      <div class="terminal">
+        <div class="terminal-bar"><span class="dots">● ● ●</span>&nbsp;&nbsp; strace -c /bin/ls data</div>
+        <pre>% time     seconds  usecs/call  calls errors syscall
+ 51.97    0.000593         593      1        execve
+ 23.75    0.000271          15     17        mmap
+  5.78    0.000066          13      5        mprotect
+  4.29    0.000049           8      6        openat
+  3.59    0.000041          41      1        munmap
+  2.10    0.000024           3      8        close
+  2.10    0.000024           3      7        fstat
+  1.93    0.000022           4      5        read
+  0.88    0.000010           5      2      2 access
+  0.00    0.000000           0      1      1 ioctl
+  0.00    0.000000           0      2      2 statfs
+  0.00    0.000000           0      2        getdents64
+------ ----------- ----------- ------ ------ --------
+100.00    0.001141          16     70      5 total</pre>
+      </div>
+      <figcaption>Figure 4. The saved <code>strace -c</code> summary: 70 system calls and five expected probe errors.</figcaption>
+    </figure>
+
+    <p><code>strace -c</code> makes the user/kernel boundary measurable. Even listing one directory required 70 system calls. The 17 <code>mmap</code> calls are largely the dynamic loader mapping libraries before the program does its useful work, while <code>getdents64</code> reads directory entries. The five errors do not mean <code>ls</code> failed: access, terminal and filesystem probes commonly try an operation, inspect the error code, and choose another path. Every listed call crosses from user mode into privileged kernel code.</p>
+  </section>
+
+  <section class="page">
+    <h2>5. Locality of reference: the experiment</h2>
+    <p>The C benchmark allocates a 4096 × 4096 matrix of 32-bit unsigned integers: 16,777,216 elements or exactly 64 MiB. Both loops add every element and produce the same checksum. Row-major order follows C's contiguous layout. Column-major order jumps one complete row per access, a stride of 4096 × 4 = 16,384 bytes. The program touches a separate 64 MiB buffer between measurements to disturb the caches, alternates which traversal runs first, executes seven trials and reports the median to reduce sensitivity to interruptions.</p>
+
+    <div class="metrics">
+      <div class="metric"><strong>64 MiB</strong>working set</div>
+      <div class="metric"><strong>7 trials</strong>alternating order</div>
+      <div class="metric"><strong>28.49×</strong>column slowdown</div>
+    </div>
+
+    <table>
+      <thead><tr><th>Trial</th><th>Row-major (ms)</th><th>Column-major (ms)</th><th>Ratio</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>13.503</td><td>399.175</td><td>29.56×</td></tr>
+        <tr><td>2</td><td>15.371</td><td>439.497</td><td>28.59×</td></tr>
+        <tr><td>3</td><td>16.342</td><td>438.782</td><td>26.85×</td></tr>
+        <tr><td>4</td><td>21.263</td><td>442.635</td><td>20.82×</td></tr>
+        <tr><td>5</td><td>15.142</td><td>428.977</td><td>28.33×</td></tr>
+        <tr><td>6</td><td>17.825</td><td>437.953</td><td>24.57×</td></tr>
+        <tr><td>7</td><td>14.421</td><td>425.847</td><td>29.53×</td></tr>
+        <tr><td><strong>Median</strong></td><td><strong>15.371</strong></td><td><strong>437.953</strong></td><td><strong>28.49×</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="chart">
+      <div class="bar-label"><span>Row-major median</span><span>15.371 ms</span></div>
+      <div class="bar-track"><div class="bar row"></div></div>
+      <div class="bar-label"><span>Column-major median</span><span>437.953 ms</span></div>
+      <div class="bar-track"><div class="bar column"></div></div>
+    </div>
+    <figcaption>Figure 5. Seven measured runs and the medians used by the dashboard. Column-major traversal took 28.49 times as long.</figcaption>
+
+    <p>The arithmetic is identical, but the access order changes how much useful work is obtained from each cache line. A typical 64-byte line holds sixteen 4-byte integers. Row-major order consumes all sixteen before moving on and is easy to prefetch and vectorise. Column-major order uses one integer and then jumps 16 KiB, so most of the fetched line is not reused until much later. The stride also touches a new page every few accesses, increasing translation-lookaside-buffer pressure. Because the 64 MiB matrix exceeds the 12 MiB L3 cache, lines are evicted before the traversal returns to nearby elements.</p>
+
+    <p>The measured 28.49× gap is larger than the simple “sixteen integers per cache line” estimate. That estimate describes spatial utilisation only; it does not include TLB misses, reduced hardware prefetch effectiveness, memory-level dependency effects, or the compiler's greater opportunity to vectorise the contiguous loop. This is why the benchmark is necessary: theory predicts the direction, but the machine determines the magnitude.</p>
+  </section>
+
+  <section class="page">
+    <h2>6. The dashboard</h2>
+    <p>The dashboard is served by <code>server.py</code> using Python's standard library. Static identity and locality values come from the reproducible capture in <code>data/results.json</code>. The browser then polls <code>/api/live</code> every two seconds, so CPU usage, memory use and the top five processes change without reloading. The page does not invent missing measurements: an unavailable endpoint is shown as offline, while the captured experiment remains visible.</p>
+
+    <figure class="figure">
+      <img class="dashboard" src="assets/dashboard.png" alt="Live system and memory locality dashboard">
+      <figcaption>Figure 6. The live dashboard at 17:14 on 29 September 2026. The top process changed during capture, illustrating that observation itself perturbs the system.</figcaption>
+    </figure>
+
+    <h2>7. Honesty and reproduction</h2>
+    <p>No numeric result in this report was chosen by hand. <code>run.sh</code> timestamps the capture, saves command output, compiles the C benchmark with warnings enabled, records all seven trials and regenerates the JSON used by the page. Memory and process figures will naturally differ on another run because they describe a moment. The locality ratio should keep the same direction but will vary with CPU load, cache hierarchy, compiler, power state and thermal conditions.</p>
+
+    <div class="repro">./run.sh
+python3 server.py
+# open http://localhost:8000</div>
+
+    <p class="small" style="margin-top:3mm"><strong>Saved evidence:</strong> <code>lscpu.txt</code>, <code>free-h.txt</code>, <code>top.txt</code>, <code>ps-eLf.txt</code>, <code>strace-c.txt</code>, <code>locality.json</code> and <code>results.json</code>. The exact commands are stored in <code>data/commands.txt</code>.</p>
+  </section>
+</body>
+</html>

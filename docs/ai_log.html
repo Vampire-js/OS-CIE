@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AI Interaction Log</title>
+  <style>
+    @page { size: A4; margin: 13mm 15mm 14mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #171717; font: 8.65pt/1.31 "Noto Sans", Arial, sans-serif; }
+    .page { break-after: page; }
+    .page:last-child { break-after: auto; }
+    h1 { margin: 0 0 2mm; font: 700 18pt/1.1 "Noto Serif", serif; }
+    h2 { margin: 3.5mm 0 1.5mm; font: 700 12.5pt/1.2 "Noto Serif", serif; }
+    p { margin: 0 0 2.2mm; text-align: justify; }
+    .meta { margin-bottom: 3mm; padding-bottom: 2mm; border-bottom: 1px solid #888; font-size: 8.2pt; }
+    .intro { margin-bottom: 3mm; }
+    .entry { margin: 2.5mm 0 4mm; break-inside: avoid; }
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5mm;
+      padding-bottom: 1mm;
+      border-bottom: 1px solid #aab1b9;
+      font: 700 11pt "Noto Serif", serif;
+    }
+    .verdict { color: #9a260f; font: 800 8pt "Noto Sans", sans-serif; letter-spacing: .06em; }
+    .correct { color: #176b3a; }
+    .row { display: grid; grid-template-columns: 25mm 1fr; gap: 2.5mm; margin: 1.5mm 0; }
+    .label { font-weight: 800; }
+    pre {
+      margin: .8mm 0 0;
+      padding: 2mm 2.5mm;
+      border: 1px solid #3a414b;
+      border-radius: 4px;
+      color: #e6edf3;
+      background: #0d1117;
+      white-space: pre-wrap;
+      font: 6.8pt/1.23 "DejaVu Sans Mono", monospace;
+    }
+    .takeaway {
+      margin-top: 4mm;
+      padding: 3mm;
+      border-left: 3px solid #315c85;
+      background: #f0f4f8;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <h1>AI Interaction Log</h1>
+    <div class="meta">CIE-1, Computer Organisation &amp; Operating Systems | TE IT | Roll No. 33215, Name Adwaiy Deshpande | Assistant used: GitHub Copilot CLI (GPT-5.6 Sol)</div>
+    <p class="intro">I used AI for four limited tasks: interpreting Linux memory columns, predicting the locality result before running it, explaining an unusual CPU topology, and checking process-state terminology. I did not let it supply measurements. Two answers were too confident and one assumed a conventional CPU layout that this laptop does not have. I kept those failures because they show why every hardware-specific statement in the report was checked against command output.</p>
+
+    <article class="entry">
+      <div class="entry-head"><span>Entry 1</span><span class="verdict">AI WAS WRONG</span></div>
+      <div class="row"><div class="label">My prompt</div><div>From this <code>free -h</code> output, how much memory can a new program use without swapping: 4.0 GiB free, 6.0 GiB buff/cache, and 7.8 GiB available?</div></div>
+      <div class="row"><div class="label">AI answer</div><div>It added free and buff/cache and said approximately 10 GiB should be usable because cached pages can be discarded. It described the available column as a conservative estimate that excludes cache.</div></div>
+      <div class="row"><div class="label">How I checked</div><div>I read the <code>free(1)</code> manual and compared the answer with the kernel-derived available value printed by the command. I also checked the Swap row before making any claim about what would happen under pressure.</div></div>
+      <div class="row"><div class="label">Evidence</div><div><pre>$ free -h
+               total   used   free   shared   buff/cache   available
+Mem:            15Gi  7.5Gi  4.0Gi    914Mi        6.0Gi        7.8Gi
+Swap:           15Gi     0B   15Gi</pre></div></div>
+      <div class="row"><div class="label">Conclusion</div><div>The AI double-counted reclaimable memory. <em>Available</em> already estimates how much can be allocated without swapping and includes the reclaimable part of cache. Not all 6.0 GiB of buff/cache can be reclaimed immediately, so 4.0 + 6.0 is not the right calculation. It also would have been unsafe to discuss swap behaviour without first noticing that 15 GiB of swap is configured and currently unused.</div></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head"><span>Entry 2</span><span class="verdict">AI WAS OVERCONFIDENT</span></div>
+      <div class="row"><div class="label">My prompt</div><div>Before I run it, how much slower should column-major traversal be for a 4096 × 4096 array of 32-bit integers on this laptop?</div></div>
+      <div class="row"><div class="label">AI answer</div><div>It reasoned that a 64-byte cache line holds sixteen integers, so row-major order gets sixteen useful values per line while column-major gets one. It predicted a slowdown near 16× and said hardware prefetching would probably reduce it below that.</div></div>
+      <div class="row"><div class="label">How I checked</div><div>I compiled with <code>gcc -O2</code>, flushed a separate 64 MiB buffer between traversals, alternated which loop ran first, executed seven trials and compared medians rather than selecting one favourable run.</div></div>
+      <div class="row"><div class="label">Evidence</div><div><pre>row-major ms:    13.503 15.371 16.342 21.263 15.142 17.825 14.421
+column-major ms: 399.175 439.497 438.782 442.635 428.977 437.953 425.847
+median:          15.371 ms versus 437.953 ms = 28.49x</pre></div></div>
+      <div class="row"><div class="label">Conclusion</div><div>The direction and cache-line explanation were correct, but 16× was not a reliable ceiling. The observed slowdown was 28.49×. The simple line-utilisation argument ignores the 16 KiB stride, TLB pressure, reduced prefetch effectiveness and the contiguous loop's greater opportunity for vectorisation. AI turned one component of the cost into a complete prediction.</div></div>
+    </article>
+  </section>
+
+  <section class="page">
+    <article class="entry">
+      <div class="entry-head"><span>Entry 3</span><span class="verdict">AI ASSUMED WRONG HARDWARE</span></div>
+      <div class="row"><div class="label">My prompt</div><div><code>lscpu</code> says 8 cores, 2 threads per core and only 12 CPUs. Shouldn't that be 16 logical CPUs?</div></div>
+      <div class="row"><div class="label">AI answer</div><div>It suggested that four logical CPUs were probably disabled in firmware or taken offline by Linux, because it multiplied eight cores by two threads and treated the result as universal.</div></div>
+      <div class="row"><div class="label">How I checked</div><div>I listed the CPU-to-core mapping and checked the processor model. All CPUs were online. Cores 0–3 each had two logical CPUs, while cores 4–7 each had one, which matches the hybrid design of the i5-12450H.</div></div>
+      <div class="row"><div class="label">Evidence</div><div><pre>$ lscpu -e=CPU,CORE,SOCKET,ONLINE
+CPU CORE SOCKET ONLINE
+  0    0      0    yes       1    0      0    yes
+  2    1      0    yes       3    1      0    yes
+  4    2      0    yes       5    2      0    yes
+  6    3      0    yes       7    3      0    yes
+  8    4      0    yes       9    5      0    yes
+ 10    6      0    yes      11    7      0    yes</pre></div></div>
+      <div class="row"><div class="label">Conclusion</div><div>No CPUs were missing. Four performance cores use two hardware threads each and four efficiency cores use one each: 4 × 2 + 4 × 1 = 12. The summary field “threads per core: 2” describes the maximum topology and does not mean every heterogeneous core has two threads. The AI applied a symmetric-core assumption to a hybrid processor.</div></div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head"><span>Entry 4</span><span class="verdict correct">AI WAS CORRECT</span></div>
+      <div class="row"><div class="label">My prompt</div><div>What do the primary STAT letters I and D mean in <code>ps</code>, and why can a D-state process ignore even SIGKILL for a while?</div></div>
+      <div class="row"><div class="label">AI answer</div><div>It said I marks an idle kernel thread and D means uninterruptible sleep, normally while the kernel waits for I/O. SIGKILL remains pending until the kernel operation reaches a safe point because stopping the task midway could leave kernel or device state inconsistent.</div></div>
+      <div class="row"><div class="label">How I checked</div><div>I compared the wording with the PROCESS STATE CODES section of <code>man ps</code> and confirmed that the I-state rows on this machine were kernel worker threads.</div></div>
+      <div class="row"><div class="label">Evidence</div><div><pre>$ ps -eo pid,stat,comm | awk '$2 ~ /^I/ {print}' | head -4
+    4 I&lt;   kworker/R-rcu_gp
+    5 I&lt;   kworker/R-sync_wq
+    6 I&lt;   kworker/R-kvfree_rcu_reclaim
+    7 I&lt;   kworker/R-slub_flushwq</pre></div></div>
+      <div class="row"><div class="label">Conclusion</div><div>The answer matched the manual page and the local evidence. I used the concepts, rewritten in my own words, when describing scheduler states in the report and dashboard.</div></div>
+    </article>
+
+    <h2>What I take from this</h2>
+    <div class="takeaway">
+      <p>The repeated failure mode was not lack of vocabulary; it was treating a general rule as a measurement. AI could explain cache lines, reclaimable memory and simultaneous multithreading fluently, but it could not know this machine's reclaim estimate, timing ratio or hybrid topology until I supplied evidence.</p>
+      <p style="margin-bottom:0">My practical rule is: use AI to identify what to inspect and to explain documented meanings, then verify every machine-specific number with a command, a manual page or an experiment. All numeric claims in the report come from saved output. Where the result disagreed with the prediction, I kept the result and corrected the explanation rather than adjusting the data to fit the theory.</p>
+    </div>
+  </section>
+</body>
+</html>

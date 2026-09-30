@@ -1,17 +1,22 @@
-top - 21:52:01 up  5:14,  1 user,  load average: 2.61, 2.86, 2.36
-Tasks: 406 total,   1 running, 405 sleeping,   0 stopped,   0 zombie
-%Cpu(s):  2.2 us,  2.2 sy,  2.2 ni, 92.0 id,  1.4 wa,  0.0 hi,  0.0 si,  0.0 st 
-MiB Mem :  15713.0 total,   1391.0 free,   9654.5 used,   7608.7 buff/cache     
-MiB Swap:  15713.0 total,  15713.0 free,      0.0 used.   6058.5 avail Mem 
+top - 06:21:14 up 14:46,  1 user,  load average: 2.07, 1.91, 1.90
+Tasks: 433 total,   1 running, 424 sleeping,   8 stopped,   0 zombie
+%Cpu(s):  2.8 us,  2.8 sy,  8.5 ni, 77.3 id,  8.5 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :  15713.0 total,   2286.7 free,  11412.0 used,   4495.5 buff/cache     
+MiB Swap:  15713.0 total,  14812.1 free,    900.9 used.   4301.0 avail Mem 
 
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-   2305 vampire+  17  -3 2103268 181284 124452 S  16.7   1.1  61:06.70 cosmic-comp
-  31536 vampire+  17  -3    8908   5248   3096 R  16.7   0.0   0:00.03 top
-   2884 vampire+  20   0 6014920 187400 124016 S   8.3   1.2  24:09.07 mpvpaper
-  28483 vampire+  17  -3 1764164 130520  82412 S   8.3   0.8   1:32.52 cosmic-term
-  30209 root      20   0       0      0      0 I   8.3   0.0   0:06.39 kworker/u48:1-i915
-      1 root      20   0   22628  13712   9428 S   0.0   0.1   0:01.90 systemd
-      2 root      20   0       0      0      0 S   0.0   0.0   0:00.03 kthreadd
+   3081 vampire+  17  -3 2111928  79876  56732 S  33.3   0.5  86:09.08 cosmic-comp
+   3814 vampire+  20   0 6020560  93228  36584 S  16.7   0.6  35:09.07 mpvpaper
+   4330 vampire+  32  12   53.5g 589976 392740 S  16.7   3.7  46:03.64 brave
+  56725 vampire+  17  -3   18784   5684   3524 R  16.7   0.0   0:00.03 top
+   3268 vampire+  32  12 2184300  47512  17080 S   8.3   0.3   2:06.74 cosmic-panel
+   3290 vampire+  32  12 1194608  25600  20592 S   8.3   0.2   0:06.67 cosmic-greeter
+   3291 vampire+  32  12 2264252  46280  36288 S   8.3   0.3   0:13.82 cosmic-files-ap
+   3645 vampire+  32  12 1425600  33128  13088 S   8.3   0.2   2:05.98 cosmic-ext-appl
+  28637 vampire+  20   0 1411.5g 504612 106076 S   8.3   3.1   5:02.74 code
+  56328 vampire+  32  12 1448.5g 429416 150244 S   8.3   2.7   1:32.69 brave
+      1 root      20   0   22632  13768   9464 S   0.0   0.1   0:02.44 systemd
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.04 kthreadd
       3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
       4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp
       5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq
@@ -20,67 +25,67 @@ MiB Swap:  15713.0 total,  15713.0 free,      0.0 used.   6058.5 avail Mem
       8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns
      10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri
      13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq
-     14 root      20   0       0      0      0 S   0.0   0.0   0:02.08 ksoftirqd/0
-     15 root      20   0       0      0      0 I   0.0   0.0   1:14.36 rcu_preempt
+     14 root      20   0       0      0      0 S   0.0   0.0   0:03.59 ksoftirqd/0
+     15 root      20   0       0      0      0 I   0.0   0.0   1:46.29 rcu_preempt
      16 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0
-     17 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker
-     18 root      rt   0       0      0      0 S   0.0   0.0   0:02.10 migration/0
+     17 root      20   0       0      0      0 S   0.0   0.0   0:00.01 rcu_exp_gp_kthread_worker
+     18 root      rt   0       0      0      0 S   0.0   0.0   0:02.38 migration/0
      19 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0
      20 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
      21 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2
      22 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/2
-     23 root      rt   0       0      0      0 S   0.0   0.0   0:01.89 migration/2
-     24 root      20   0       0      0      0 S   0.0   0.0   0:00.22 ksoftirqd/2
+     23 root      rt   0       0      0      0 S   0.0   0.0   0:02.11 migration/2
+     24 root      20   0       0      0      0 S   0.0   0.0   0:00.29 ksoftirqd/2
      26 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-events_highpri
      27 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/4
      28 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/4
-     29 root      rt   0       0      0      0 S   0.0   0.0   0:01.72 migration/4
-     30 root      20   0       0      0      0 S   0.0   0.0   0:00.10 ksoftirqd/4
+     29 root      rt   0       0      0      0 S   0.0   0.0   0:01.95 migration/4
+     30 root      20   0       0      0      0 S   0.0   0.0   0:00.16 ksoftirqd/4
      32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/4:0H-events_highpri
      33 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/6
      34 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/6
-     35 root      rt   0       0      0      0 S   0.0   0.0   0:01.61 migration/6
-     36 root      20   0       0      0      0 S   0.0   0.0   0:00.06 ksoftirqd/6
+     35 root      rt   0       0      0      0 S   0.0   0.0   0:01.80 migration/6
+     36 root      20   0       0      0      0 S   0.0   0.0   0:00.13 ksoftirqd/6
      38 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/6:0H-events_highpri
      39 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/8
      40 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/8
-     41 root      rt   0       0      0      0 S   0.0   0.0   0:14.90 migration/8
-     42 root      20   0       0      0      0 S   0.0   0.0   0:00.07 ksoftirqd/8
+     41 root      rt   0       0      0      0 S   0.0   0.0   0:20.42 migration/8
+     42 root      20   0       0      0      0 S   0.0   0.0   0:00.13 ksoftirqd/8
      44 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/8:0H-events_highpri
      45 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/9
      46 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/9
-     47 root      rt   0       0      0      0 S   0.0   0.0   0:08.86 migration/9
-     48 root      20   0       0      0      0 S   0.0   0.0   0:00.08 ksoftirqd/9
+     47 root      rt   0       0      0      0 S   0.0   0.0   0:12.41 migration/9
+     48 root      20   0       0      0      0 S   0.0   0.0   0:00.12 ksoftirqd/9
      50 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/9:0H-events_highpri
      51 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/10
      52 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/10
-     53 root      rt   0       0      0      0 S   0.0   0.0   0:06.22 migration/10
-     54 root      20   0       0      0      0 S   0.0   0.0   0:00.05 ksoftirqd/10
+     53 root      rt   0       0      0      0 S   0.0   0.0   0:08.90 migration/10
+     54 root      20   0       0      0      0 S   0.0   0.0   0:00.10 ksoftirqd/10
      56 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/10:0H-events_highpri
      57 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/11
      58 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/11
-     59 root      rt   0       0      0      0 S   0.0   0.0   0:04.57 migration/11
-     60 root      20   0       0      0      0 S   0.0   0.0   0:00.05 ksoftirqd/11
+     59 root      rt   0       0      0      0 S   0.0   0.0   0:06.60 migration/11
+     60 root      20   0       0      0      0 S   0.0   0.0   0:00.08 ksoftirqd/11
      62 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/11:0H-events_highpri
      63 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
      64 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1
-     65 root      rt   0       0      0      0 S   0.0   0.0   0:00.30 migration/1
-     66 root      20   0       0      0      0 S   0.0   0.0   0:01.66 ksoftirqd/1
+     65 root      rt   0       0      0      0 S   0.0   0.0   0:00.54 migration/1
+     66 root      20   0       0      0      0 S   0.0   0.0   0:02.47 ksoftirqd/1
      68 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri
      69 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3
      70 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/3
-     71 root      rt   0       0      0      0 S   0.0   0.0   0:00.26 migration/3
-     72 root      20   0       0      0      0 S   0.0   0.0   0:00.19 ksoftirqd/3
+     71 root      rt   0       0      0      0 S   0.0   0.0   0:00.38 migration/3
+     72 root      20   0       0      0      0 S   0.0   0.0   0:00.21 ksoftirqd/3
      74 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-events_highpri
      75 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/5
      76 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/5
-     77 root      rt   0       0      0      0 S   0.0   0.0   0:00.26 migration/5
-     78 root      20   0       0      0      0 S   0.0   0.0   0:00.05 ksoftirqd/5
+     77 root      rt   0       0      0      0 S   0.0   0.0   0:00.37 migration/5
+     78 root      20   0       0      0      0 S   0.0   0.0   0:00.07 ksoftirqd/5
      80 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/5:0H-events_highpri
      81 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/7
      82 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/7
-     83 root      rt   0       0      0      0 S   0.0   0.0   0:00.24 migration/7
-     84 root      20   0       0      0      0 S   0.0   0.0   0:00.38 ksoftirqd/7
+     83 root      rt   0       0      0      0 S   0.0   0.0   0:00.35 migration/7
+     84 root      20   0       0      0      0 S   0.0   0.0   0:00.15 ksoftirqd/7
      86 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/7:0H-events_highpri
      87 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
      88 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_frag_wq
@@ -88,18 +93,16 @@ MiB Swap:  15713.0 total,  15713.0 free,      0.0 used.   6058.5 avail Mem
      90 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread
      91 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread
      92 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd
-     93 root      20   0       0      0      0 S   0.0   0.0   0:00.08 khungtaskd
+     93 root      20   0       0      0      0 S   0.0   0.0   0:00.14 khungtaskd
      94 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper
      97 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-writeback
-     98 root      20   0       0      0      0 S   0.0   0.0   0:00.84 kcompactd0
+     98 root      20   0       0      0      0 S   0.0   0.0   0:00.95 kcompactd0
      99 root      25   5       0      0      0 S   0.0   0.0   0:00.00 ksmd
-    100 root      39  19       0      0      0 S   0.0   0.0   0:00.19 khugepaged
+    100 root      39  19       0      0      0 S   0.0   0.0   0:00.27 khugepaged
     101 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kblockd
     102 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-blkcg_punt_bio
     103 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kintegrityd
-    104 root     -51   0       0      0      0 S   0.0   0.0   0:00.08 irq/9-acpi
-    105 root      20   0       0      0      0 I   0.0   0.0   0:02.99 kworker/8:1-events
-    107 root      20   0       0      0      0 I   0.0   0.0   0:01.02 kworker/1:1-events
+    104 root     -51   0       0      0      0 S   0.0   0.0   0:00.16 irq/9-acpi
     110 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-tpm_dev_wq
     111 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ata_sff
     112 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md_bitmap
@@ -108,38 +111,37 @@ MiB Swap:  15713.0 total,  15713.0 free,      0.0 used.   6058.5 avail Mem
     115 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-md
     116 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-edac-poller
     117 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-devfreq_wq
-    118 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 watchdogd
-    119 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-quota_events_unbound
-    120 root       0 -20       0      0      0 I   0.0   0.0   0:09.11 kworker/10:1H-i915_cleanup
-    122 root      20   0       0      0      0 S   0.0   0.0   0:00.10 kswapd0
-    123 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ecryptfs-kthread
-    124 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kthrotld
-    125 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/122-pciehp
-    126 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-acpi_thermal_pm
-    129 root      20   0       0      0      0 S   0.0   0.0   0:00.35 hwrng
+    119 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 watchdogd
+    121 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-quota_events_unbound
+    122 root       0 -20       0      0      0 I   0.0   0.0   0:06.22 kworker/10:1H-i915_cleanup
+    123 root      20   0       0      0      0 S   0.0   0.0   0:20.85 kswapd0
+    124 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ecryptfs-kthread
+    125 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kthrotld
+    126 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/122-pciehp
+    127 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-acpi_thermal_pm
+    129 root      20   0       0      0      0 S   0.0   0.0   0:00.49 hwrng
     130 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-hfi-updates
     131 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mld
-    132 root       0 -20       0      0      0 I   0.0   0.0   0:01.17 kworker/5:1H-kblockd
-    133 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ipv6_addrconf
-    134 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kstrp
-    135 root      20   0       0      0      0 I   0.0   0.0   0:01.10 kworker/3:1-mm_percpu_wq
-    137 root      20   0       0      0      0 I   0.0   0.0   0:01.00 kworker/5:1-events
-    154 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-charger_manager
-    155 root       0 -20       0      0      0 I   0.0   0.0   0:02.95 kworker/0:1H-i915_cleanup
-    180 root       0 -20       0      0      0 I   0.0   0.0   0:02.80 kworker/9:1H-i915_cleanup
-    195 root       0 -20       0      0      0 I   0.0   0.0   0:02.31 kworker/6:1H-i915_cleanup
-    196 root       0 -20       0      0      0 I   0.0   0.0   0:03.08 kworker/4:1H-i915_cleanup
-    197 root       0 -20       0      0      0 I   0.0   0.0   0:04.10 kworker/8:1H-kblockd
-    199 root       0 -20       0      0      0 I   0.0   0.0   0:00.81 kworker/7:1H-kblockd
-    200 root       0 -20       0      0      0 I   0.0   0.0   0:06.47 kworker/11:1H-i915_cleanup
-    209 root       0 -20       0      0      0 I   0.0   0.0   0:01.31 kworker/3:1H-kblockd
-    215 root       0 -20       0      0      0 I   0.0   0.0   0:03.68 kworker/2:1H-i915_cleanup
-    233 root       0 -20       0      0      0 I   0.0   0.0   0:01.28 kworker/1:1H-kblockd
+    132 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ipv6_addrconf
+    133 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kstrp
+    134 root      20   0       0      0      0 I   0.0   0.0   0:01.33 kworker/3:1-mm_percpu_wq
+    153 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-charger_manager
+    154 root       0 -20       0      0      0 I   0.0   0.0   0:03.33 kworker/0:1H-i915_cleanup
+    182 root       0 -20       0      0      0 I   0.0   0.0   0:06.81 kworker/4:1H-events_highpri
+    194 root       0 -20       0      0      0 I   0.0   0.0   0:02.06 kworker/3:1H-kblockd
+    195 root       0 -20       0      0      0 I   0.0   0.0   0:01.70 kworker/5:1H-i915_cleanup
+    196 root       0 -20       0      0      0 I   0.0   0.0   0:04.76 kworker/6:1H-i915_cleanup
+    197 root       0 -20       0      0      0 I   0.0   0.0   0:09.28 kworker/2:1H-i915_cleanup
+    199 root       0 -20       0      0      0 I   0.0   0.0   0:01.52 kworker/7:1H-kblockd
+    206 root       0 -20       0      0      0 I   0.0   0.0   0:04.58 kworker/8:1H-i915_cleanup
+    211 root       0 -20       0      0      0 I   0.0   0.0   0:03.92 kworker/11:1H-i915_cleanup
+    231 root       0 -20       0      0      0 I   0.0   0.0   0:03.64 kworker/9:1H-i915_cleanup
+    233 root       0 -20       0      0      0 I   0.0   0.0   0:01.34 kworker/1:1H-kblockd
     235 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-nvme-wq
     236 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-nvme-reset-wq
     237 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-nvme-delete-wq
     238 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-nvme-auth-wq
-    240 root     -51   0       0      0      0 S   0.0   0.0   1:20.93 irq/136-SYNA0001:00
+    239 root     -51   0       0      0      0 S   0.0   0.0   1:12.30 irq/134-SYNA0001:00
     242 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-USBC000:00-con1
     243 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-USBC000:00-con2
     244 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ttm
@@ -147,267 +149,292 @@ MiB Swap:  15713.0 total,  15713.0 free,      0.0 used.   6058.5 avail Mem
     246 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 card0-crtc1
     247 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 card0-crtc2
     248 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 card0-crtc3
-    269 root      20   0       0      0      0 I   0.0   0.0   0:03.61 kworker/10:2-events
-    278 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-raid5wq
-    321 root      20   0       0      0      0 S   0.0   0.0   0:04.46 jbd2/nvme0n1p7-8
-    322 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ext4-rsv-conversion
-    374 root      32  12  153080  52976  51356 S   0.0   0.3   0:44.23 systemd-journal
-    410 root      32  12   31276   9320   5028 S   0.0   0.1   0:00.32 systemd-udevd
+    277 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-raid5wq
+    320 root      20   0       0      0      0 S   0.0   0.0   0:06.03 jbd2/nvme0n1p7-8
+    321 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-ext4-rsv-conversion
+    374 root      32  12  178016  64120  62504 S   0.0   0.4   1:06.59 systemd-journal
+    408 root      32  12   31268   9024   4828 S   0.0   0.1   0:00.63 systemd-udevd
     441 root      -2   0       0      0      0 S   0.0   0.0   0:00.00 psimon
-    616 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_queue
-    617 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_queue
-    619 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_open_q
-    766 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-cfg80211
-    786 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/16-processor_thermal_device_pci
-    790 systemd+  32  12   21848  13592  10988 S   0.0   0.1   0:04.98 systemd-resolve
-    796 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia-modeset/kthread_q
-    797 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia-modeset/deferred_close_kthread_q
-    866 message+  32  12   11332   5388   4448 S   0.0   0.0   0:00.02 dbus-broker-lau
-    868 message+  20   0    8992   4852   2572 S   0.0   0.0   0:02.61 dbus-broker
-    869 root      32  12  341592  20756  16568 S   0.0   0.1   0:03.81 NetworkManager
-    870 root      32  12  317576   8036   7108 S   0.0   0.0   0:15.26 accounts-daemon
-    872 avahi     32  12    8620   4568   4092 S   0.0   0.0   0:00.64 avahi-daemon
-    873 root      32  12   13744   7124   6200 S   0.0   0.0   0:01.60 bluetoothd
-    874 root      32  12   84612  11264   8684 S   0.0   0.1   0:07.10 system76-schedu
-    875 root      32  12  889004   7856   6596 S   0.0   0.0   0:00.02 cosmic-greeter-
-    876 root      32  12   13708   2912   2672 S   0.0   0.0   0:00.04 cron
-    880 gnome-r+  32  12  365572  16908  14360 S   0.0   0.1   0:00.04 gnome-remote-de
-    883 root      32  12   39184  21548  10608 S   0.0   0.1   0:00.10 networkd-dispat
-    884 root      32  12  308784   8696   4904 S   0.0   0.1   0:15.05 nvidia-powerd
-    886 polkitd   32  12  384328  10676   7800 S   0.0   0.1   0:00.84 polkitd
-    904 root      32  12  317920   8268   7268 S   0.0   0.1   0:00.07 power-profiles-
-    908 root      32  12  314188   7224   6480 S   0.0   0.0   0:00.09 switcheroo-cont
-    912 root      32  12   18664   9892   8148 S   0.0   0.1   0:00.50 systemd-logind
-    915 root      32  12  429192  10852   9724 S   0.0   0.1   0:05.91 thermald
-    917 root      32  12  469432  14400  11672 S   0.0   0.1   0:00.65 udisksd
-    919 root      32  12   18268  11988  10268 S   0.0   0.1   0:01.27 wpa_supplicant
-    922 avahi     32  12    8432   1516   1156 S   0.0   0.0   0:00.00 avahi-daemon
-    959 root      32  12  323076  11276   7772 S   0.0   0.1   0:01.70 upowerd
-    996 syslog    32  12  222540   7296   4592 S   0.0   0.0   0:20.84 rsyslogd
-   1005 root      32  12  392188  12944  10768 S   0.0   0.1   0:00.18 ModemManager
-   1042 root      32  12  380120 215844  81388 S   0.0   1.3   0:09.10 execsnoop-bpfcc
-   1044 root     -51   0       0      0      0 S   0.0   0.0   3:47.41 irq/148-rtw89_pci
-   1112 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/149-nvidia
-   1114 root      20   0       0      0      0 S   0.0   0.0   0:00.20 nv_queue
-   1136 root      -2   0       0      0      0 S   0.0   0.0   0:00.00 psimon
-   1162 nvidia-+  32  12    3336   2160   1984 S   0.0   0.0   0:00.00 nvidia-persiste
-   1182 root      32  12   42680  12256  10044 S   0.0   0.1   0:00.03 cupsd
-   1184 jenkins   32  12   10.7g 796308  28636 S   0.0   4.9   2:04.53 java
-   1189 root      32  12 1357932  46256  26452 S   0.0   0.3   0:15.31 tailscaled
-   1194 root      32  12 2405772  42568  28664 S   0.0   0.3   0:22.96 containerd
-   1234 vampire+  20   0   21476  12640   9512 S   0.0   0.1   0:00.95 systemd
-   1238 _chrony   32  12   19520   4052   3232 S   0.0   0.0   0:00.52 chronyd
-   1239 _chrony   32  12   11276   3508   2848 S   0.0   0.0   0:00.01 chronyd
-   1290 root      32  12   12032   7968   6836 S   0.0   0.0   0:00.02 sshd
-   1305 vampire+  20   0   21200   3608   1872 S   0.0   0.0   0:00.00 (sd-pam)
-   1334 mysql     32  12 2310700 396828  36384 S   0.0   2.5   3:09.21 mysqld
-   1391 vampire+  29   9    9672   4260   3808 S   0.0   0.0   0:00.03 dbus-broker-lau
-   1393 vampire+  20   0    6568   4496   2652 S   0.0   0.0   0:00.62 dbus-broker
-   1399 vampire+   5 -15  119236  16520   9404 S   0.0   0.1   0:09.14 pipewire
-   1402 vampire+  11  -9  649784  35360  25652 S   0.0   0.2   0:05.20 wireplumber
-   1403 vampire+   5 -15   93972   6180   5316 S   0.0   0.0   0:00.02 pipewire
-   1404 vampire+   5 -15  187584  17908   9588 S   0.0   0.1   0:09.23 pipewire-pulse
-   1409 rtkit     21   1   22948   3480   3184 S   0.0   0.0   0:00.29 rtkit-daemon
-   1535 root      32  12    3864   3836   3324 S   0.0   0.0   0:00.01 greetd
-   1567 root      20   0       0      0      0 S   0.0   0.0   0:00.01 UVM global queue
-   1568 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM deferred release queue
-   1569 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM Tools Event Queue
-   1657 root      10 -10       0      0      0 S   0.0   0.0   0:00.00 krfcommd
-   1752 root      32  12    7744   7716   6352 S   0.0   0.0   0:00.07 greetd
-   1845 root      32  12  895216   9840   7848 S   0.0   0.1   0:03.21 pop-system-upda
-   1846 cups-br+  32  12  268508  19908  16848 S   0.0   0.1   0:00.07 cups-browsed
-   1847 root      32  12 2545624  85420  60236 S   0.0   0.5   0:04.77 dockerd
-   1867 root      32  12   11168   1740    764 S   0.0   0.0   0:00.00 nginx
-   1868 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1869 www-data  32  12   12892   4644   3308 S   0.0   0.0   0:00.00 nginx
-   1870 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1871 www-data  32  12   12892   4660   3324 S   0.0   0.0   0:00.00 nginx
-   1872 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1874 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1875 www-data  32  12   12892   4656   3320 S   0.0   0.0   0:00.00 nginx
-   1876 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1877 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1879 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1880 www-data  32  12   12892   4656   3320 S   0.0   0.0   0:00.00 nginx
-   1881 www-data  32  12   12892   4664   3328 S   0.0   0.0   0:00.00 nginx
-   1916 root      32  12  153668  12112   9648 S   0.0   0.1   0:00.27 system76-schedu
-   2155 vampire+  29   9  321056  10844   9480 S   0.0   0.1   0:00.44 gnome-keyring-d
-   2180 vampire+  32  12  146832   7120   5836 S   0.0   0.0   0:00.07 cosmic-session
-   2340 vampire+  32  12  669392 113968  82008 S   0.0   0.7   0:10.43 Xwayland
-   2364 vampire+  32  12  493620  13092  10356 S   0.0   0.1   0:03.30 cosmic-settings
-   2379 root      32  12    2728   1940   1808 S   0.0   0.0   0:04.40 acpid
-   2384 vampire+  29   9    2808   1852   1748 S   0.0   0.0   0:00.00 sh
-   2390 vampire+  29   9  828736  60560  46176 S   0.0   0.4   0:00.51 evolution-alarm
-   2430 vampire+  29   9  162660   7132   6436 S   0.0   0.0   0:00.01 gcr-ssh-agent
-   2454 vampire+  29   9  382940   7948   7172 S   0.0   0.0   0:00.02 at-spi-bus-laun
-   2456 vampire+  29   9  314544   6588   6060 S   0.0   0.0   0:00.00 agent
-   2480 vampire+  29   9   62140  35312  19620 S   0.0   0.2   0:00.58 applet.py
-   2481 vampire+  20   0    9544   4016   3640 S   0.0   0.0   0:00.00 dbus-broker-lau
-   2484 vampire+  20   0    4940   2940   2712 S   0.0   0.0   0:00.00 dbus-broker
-   2499 vampire+  32  12 1115180  24544  17512 S   0.0   0.2   0:01.53 cosmic-notifica
-   2500 vampire+  29   9  230248   6176   5572 S   0.0   0.0   0:00.00 dconf-service
-   2501 vampire+  32  12 2181684 119224  87292 S   0.0   0.7   1:31.33 cosmic-panel
-   2502 vampire+  29   9  318444   8316   7452 S   0.0   0.1   0:00.05 gvfsd
-   2503 vampire+  32  12 1928468  24952  17520 S   0.0   0.2   0:00.85 cosmic-app-libr
-   2510 vampire+  32  12 3007736 123168  93740 S   0.0   0.8   0:05.19 cosmic-workspac
-   2514 vampire+  32  12 1999784  28756  21376 S   0.0   0.2   0:02.90 cosmic-osd
-   2516 vampire+  32  12  156452   5372   4824 S   0.0   0.0   0:00.00 cosmic-bg
-   2519 vampire+  32  12 1327632  36680  27888 S   0.0   0.2   0:02.78 cosmic-greeter
-   2520 vampire+  32  12 2264252  54184  43192 S   0.0   0.3   0:10.59 cosmic-files-ap
-   2521 vampire+  32  12  347396   6396   5596 S   0.0   0.0   0:00.17 cosmic-idle
-   2525 vampire+  29   9  463992   7376   6576 S   0.0   0.0   0:00.01 gvfsd-fuse
-   2674 vampire+  35  15    3592   2128   1928 S   0.0   0.0   0:00.06 bwrap
-   2688 vampire+  35  15    3592   2116   1928 S   0.0   0.0   0:00.07 bwrap
-   2693 vampire+  35  15    3592   2132   1928 S   0.0   0.0   0:00.06 bwrap
-   2711 vampire+  32  12 1307824  33588  24796 S   0.0   0.2   0:00.84 cosmic-applet-a
-   2713 vampire+  32  12 1299716  31220  22684 S   0.0   0.2   0:04.74 cosmic-applet-b
-   2714 vampire+  32  12 1164504  33376  24956 S   0.0   0.2   0:05.34 cosmic-applet-b
-   2717 vampire+  32  12 1164496  33800  24212 S   0.0   0.2   0:00.54 cosmic-applet-n
-   2718 vampire+  32  12 1164528  30752  22628 S   0.0   0.2   0:00.25 cosmic-applet-n
-   2726 vampire+  32  12 1164136  29720  21860 S   0.0   0.2   0:00.14 cosmic-applet-s
-   2728 vampire+  32  12 1232132  32444  24292 S   0.0   0.2   0:01.13 cosmic-applet-t
-   2729 vampire+  32  12 1175508  33396  23856 S   0.0   0.2   0:04.13 cosmic-app-list
-   2730 vampire+  32  12 1164888  30264  21580 S   0.0   0.2   0:03.78 cosmic-applet-m
-   2731 vampire+  29   9 1100776  19716  15808 S   0.0   0.1   0:00.70 xdg-desktop-por
-   2734 vampire+  32  12 1164524  30876  22660 S   0.0   0.2   0:01.02 cosmic-applet-t
-   2737 vampire+  29   9  314164   7252   6636 S   0.0   0.0   0:00.16 flatpak-session
-   2742 vampire+  29   9    4444    896    684 S   0.0   0.0   0:00.00 p11-kit-server
-   2744 vampire+  29   9  614576   7768   6992 S   0.0   0.0   0:00.19 xdg-document-po
-   2785 vampire+  29   9  313596   6312   5800 S   0.0   0.0   0:00.01 xdg-permission-
-   2793 vampire+  29   9 1279596  43456  35124 S   0.0   0.3   0:00.19 evolution-sourc
-   2811 root      20   0    2712   2096   1984 S   0.0   0.0   0:00.00 fusermount3
-   2840 vampire+  32  12    3592   2008   1864 S   0.0   0.0   0:00.00 bwrap
-   2843 vampire+  29   9  422536  26268  18820 S   0.0   0.2   0:00.79 xdg-desktop-por
-   2844 vampire+  32  12    3592   2008   1864 S   0.0   0.0   0:00.00 bwrap
-   2846 vampire+  32  12    3592   2004   1864 S   0.0   0.0   0:00.00 bwrap
-   2847 vampire+  32  12  239968   6164   5700 S   0.0   0.0   0:00.01 xdg-dbus-proxy
-   2848 vampire+  32  12  313700   6040   5552 S   0.0   0.0   0:00.02 xdg-dbus-proxy
-   2849 vampire+  32  12  239968   6116   5628 S   0.0   0.0   0:00.03 xdg-dbus-proxy
-   2854 vampire+  32  12    3592   1612   1348 S   0.0   0.0   0:00.07 bwrap
-   2862 vampire+  32  12    3592   1600   1348 S   0.0   0.0   0:00.05 bwrap
-   2863 vampire+  32  12    3676   1624   1348 S   0.0   0.0   0:00.07 bwrap
-   2867 vampire+  20   0  550964  24556  20864 S   0.0   0.2   0:00.08 goa-daemon
-   2874 vampire+  20   0  393408   9740   8648 S   0.0   0.1   0:00.49 goa-identity-se
-   2880 vampire+  32  12 1465680  37116  26656 S   0.0   0.2   0:01.41 cosmic-ext-appl
-   2881 vampire+  32  12 1425596  36500  16492 S   0.0   0.2   1:24.64 cosmic-ext-appl
-   2882 vampire+  32  12 1118048  26992  19464 S   0.0   0.2   0:06.85 cosmic-ext-appl
-   2883 vampire+  20   0  236092   7788   7028 S   0.0   0.0   0:00.02 at-spi2-registr
-   3022 vampire+  29   9  957312  16876  13192 S   0.0   0.1   0:00.22 cosmic-applet-s
-   3060 vampire+  20   0 1742360 119288  80740 S   0.0   0.7   0:03.40 xdg-desktop-por
-   3248 vampire+  29   9 1370252  24812  21256 S   0.0   0.2   0:00.16 evolution-calen
-   3256 root      32  12  139276 116992  83084 S   0.0   0.7   0:01.13 python3
-   3278 vampire+  29   9  467196  11224   9512 S   0.0   0.1   0:00.11 gvfs-udisks2-vo
-   3281 root      20   0       0      0      0 S   0.0   0.0   0:00.00 vidmem lazy free
-   3292 vampire+  29   9  829728  30336  26256 S   0.0   0.2   0:00.12 evolution-addre
-   3295 vampire+  29   9  314076   6856   6236 S   0.0   0.0   0:00.02 gvfs-mtp-volume
-   3305 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM GPU1 BH
-   3306 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM GPU1 KC
-   3320 vampire+  29   9  393664   8412   7344 S   0.0   0.1   0:00.96 gvfs-afc-volume
-   3336 vampire+  29   9  315044   7228   6488 S   0.0   0.0   0:00.02 gvfs-gphoto2-vo
-   3363 vampire+  29   9  314056   6756   6148 S   0.0   0.0   0:00.02 gvfs-goa-volume
-   3391 vampire+  29   9  962448   9592   7620 S   0.0   0.1   0:01.29 pop-system-upda
-   3424 vampire+  29   9 5759984 146804 111180 S   0.0   0.9   0:02.43 mpvpaper
-   3982 vampire+  17  -3 1762252 127960  80936 S   0.0   0.8   0:03.13 cosmic-term
-   4002 vampire+  17  -3   20228   9716   5124 S   0.0   0.1   0:02.43 zsh
-   4014 vampire+  17  -3   17084   4156   2148 S   0.0   0.0   0:00.00 zsh
-   4541 vampire+  17  -3   19576   6024   1956 S   0.0   0.0   0:00.00 zsh
-   4542 vampire+  17  -3   19560   5728   1684 S   0.0   0.0   0:00.19 zsh
-   4544 vampire+  17  -3    5784   1880   1644 S   0.0   0.0   0:00.94 gitstatusd-linu
-   4586 vampire+  17  -3   19220   4860   3708 S   0.0   0.0   0:00.05 tmux: server
-   4587 vampire+  17  -3   23372  10524   5680 S   0.0   0.1   0:00.93 zsh
-   4917 vampire+  17  -3   19524   5860   1956 S   0.0   0.0   0:00.00 zsh
-   4918 vampire+  17  -3   19508   5648   1748 S   0.0   0.0   0:00.19 zsh
-   4921 vampire+  17  -3   19608   6292   2212 S   0.0   0.0   0:00.00 zsh
-   4926 vampire+  17  -3    5784   1880   1644 S   0.0   0.0   0:00.97 gitstatusd-linu
-   5044 vampire+  17  -3  328320  66412  18988 S   0.0   0.4   0:42.38 post-planner
-   5098 vampire+  32  12   14224   3740   3472 S   0.0   0.0   0:00.00 brave-browser-s
-   5103 vampire+  32  12   12712   1940   1832 S   0.0   0.0   0:00.00 cat
-   5104 vampire+  32  12   12712   1940   1832 S   0.0   0.0   0:00.00 cat
-   5105 vampire+  32  12   53.3g 608632 362540 S   0.0   3.8  31:11.09 brave
-   5107 vampire+  32  12   52.0g   4068   3700 S   0.0   0.0   0:00.01 chrome_crashpad
-   5109 vampire+  32  12   52.0g   3392   3064 S   0.0   0.0   0:00.00 chrome_crashpad
-   5117 vampire+  32  12   52.7g  71828  55968 S   0.0   0.4   0:00.05 brave
-   5118 vampire+  32  12   52.7g  72216  56532 S   0.0   0.4   0:00.04 brave
-   5120 vampire+  32  12   52.7g  19772   3984 S   0.0   0.1   0:00.90 brave
-   5148 vampire+  32  12   53.3g 314700 168316 S   0.0   2.0  35:01.55 brave
-   5150 vampire+  32  12   52.5g 148268 114508 S   0.0   0.9  10:50.77 brave
-   5161 vampire+  32  12   52.8g  63200  44752 S   0.0   0.4   0:03.94 brave
-   5195 vampire+  32  12 1448.5g 156840 120144 S   0.0   1.0   0:18.48 brave
-   5228 vampire+  32  12 1450.4g 116800  87280 S   0.0   0.7   5:32.91 brave
-   7532 vampire+  32  12 1448.5g 170932 131588 S   0.0   1.1   0:10.25 brave
-   7649 vampire+  32  12 1448.5g 382368 149800 S   0.0   2.4   9:51.63 brave
-   9013 root      20   0       0      0      0 I   0.0   0.0   1:01.01 kworker/9:0-events
-   9266 vampire+  29   9  240964   7088   6124 S   0.0   0.0   0:00.05 gvfsd-metadata
-  11324 root      35  15  641024  50368  40684 S   0.0   0.3   0:03.98 fwupd
-  11398 vampire+  32  12 1448.5g 188332 125868 S   0.0   1.2   0:13.24 brave
-  11885 root      20   0       0      0      0 I   0.0   0.0   0:00.05 kworker/5:0-events
-  11886 root      20   0       0      0      0 I   0.0   0.0   0:02.20 kworker/2:1-events
-  12030 root      20   0       0      0      0 I   0.0   0.0   0:02.17 kworker/4:0-events
-  12192 vampire+  32  12 1454.2g 381580 144060 S   0.0   2.4   3:14.49 brave
-  12216 vampire+  32  12 1448.5g 292696 127744 S   0.0   1.8   1:21.04 brave
-  12290 vampire+  26   6   52.5g  98576  81744 S   0.0   0.6   0:11.01 brave
-  12313 vampire+  32  12 1448.5g 125244  98520 S   0.0   0.8   0:01.07 brave
-  12335 vampire+  32  12 1448.5g 172712 116716 S   0.0   1.1   0:05.15 brave
-  12515 vampire+  32  12 1473.2g 709120 160720 S   0.0   4.4  28:30.61 brave
-  15691 root      20   0       0      0      0 I   0.0   0.0   0:00.14 kworker/7:2-mm_percpu_wq
-  16431 vampire+  32  12 2132956  29596  21944 S   0.0   0.2   0:08.28 cosmic-launcher
-  16461 vampire+  32  12 1803660  34316   6772 S   0.0   0.2   0:00.08 pop-launcher
-  16476 vampire+  32  12 1264936  18608   5660 S   0.0   0.1   0:00.15 cosmic-toplevel
-  19196 vampire+  32  12 1448.5g 195856 139268 S   0.0   1.2   0:15.88 brave
-  19889 vampire+  32  12 1448.5g 161596 114764 S   0.0   1.0   3:05.13 brave
-  19975 root      20   0       0      0      0 I   0.0   0.0   0:00.07 kworker/6:1-events
-  20391 vampire+  17  -3 1777012 141260  82400 S   0.0   0.9   0:57.44 cosmic-term
-  20419 vampire+  17  -3   20280   9764   5120 S   0.0   0.1   0:00.47 zsh
-  20423 vampire+  17  -3   17128   4168   2148 S   0.0   0.0   0:00.00 zsh
-  20810 vampire+  17  -3   19732   6076   1956 S   0.0   0.0   0:00.00 zsh
-  20811 vampire+  17  -3   19716   5844   1748 S   0.0   0.0   0:00.09 zsh
-  20813 vampire+  17  -3    5808   1916   1668 S   0.0   0.0   0:00.44 gitstatusd-linu
-  20840 vampire+  17  -3 1435876  50148  39876 S   0.0   0.3   0:00.07 MainThread
-  20851 vampire+  17  -3   15.4g 617160 132296 S   0.0   3.8  31:31.45 MainThread
-  20936 vampire+  17  -3 1018640  49900  30568 S   0.0   0.3   0:00.29 uv
-  20957 vampire+  17  -3  294584  58516  16704 S   0.0   0.4   0:01.23 python
-  20994 vampire+  17  -3 1160948  37028  28708 S   0.0   0.2   0:00.13 uv
-  21013 vampire+  17  -3  294588  58704  16884 S   0.0   0.4   0:01.32 python
-  26413 root      20   0       0      0      0 I   0.0   0.0   0:17.91 kworker/u48:5-events_unbound
-  26478 root      20   0       0      0      0 I   0.0   0.0   0:00.08 kworker/7:1-events
-  26964 vampire+  32  12 1450.4g 244960 137640 S   0.0   1.5   0:27.32 brave
-  27780 root      20   0       0      0      0 I   0.0   0.0   0:14.08 kworker/u48:14-events_unbound
-  27798 root      20   0       0      0      0 I   0.0   0.0   0:16.73 kworker/0:0-i915-unordered
-  27799 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/135-mei_me
-  27824 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia
-  27845 root      20   0       0      0      0 I   0.0   0.0   0:00.36 kworker/11:3-mm_percpu_wq
-  28358 vampire+  32  12 1448.5g 188920 132624 S   0.0   1.2   1:12.79 brave
-  28440 root      20   0       0      0      0 I   0.0   0.0   0:00.25 kworker/6:2-events
-  28513 vampire+  17  -3   23392  10524   5680 S   0.0   0.1   0:00.89 zsh
-  28517 vampire+  17  -3   17128   4168   2148 S   0.0   0.0   0:00.00 zsh
-  28909 vampire+  17  -3   19732   6076   1956 S   0.0   0.0   0:00.00 zsh
-  28910 vampire+  17  -3   19716   5844   1748 S   0.0   0.0   0:00.01 zsh
-  28912 vampire+  17  -3    5808   1924   1680 S   0.0   0.0   0:00.13 gitstatusd-linu
-  29540 root       0 -20       0      0      0 I   0.0   0.0   0:12.31 kworker/u49:3-rtw89_tx_wq
-  29845 vampire+  32  12 1450.5g 562584 151420 S   0.0   3.5  10:31.18 brave
-  29883 root      20   0       0      0      0 I   0.0   0.0   0:06.21 kworker/u48:0-iou_exit
-  29884 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/0:2-i915-unordered
-  30224 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/10:1-mm_percpu_wq
-  30339 root      20   0       0      0      0 I   0.0   0.0   0:05.52 kworker/u48:2-events_power_efficient
-  30425 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/1:2
-  30674 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/11:1-events
-  30749 root       0 -20       0      0      0 I   0.0   0.0   0:03.37 kworker/u49:0-i915_flip
-  30892 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0-events
-  30912 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/4:1
-  30918 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/3:2
-  30947 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/9:1
-  30983 root       0 -20       0      0      0 I   0.0   0.0   0:01.04 kworker/u49:2-rtw89_tx_wq
-  31034 vampire+  32  12 1452.2g 154840 105164 S   0.0   1.0   0:03.51 brave
-  31106 vampire+  32  12 1448.5g 223704 129032 S   0.0   1.4   1:11.62 brave
-  31122 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/8:2
-  31140 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/11:0-mm_percpu_wq
-  31160 root      20   0       0      0      0 I   0.0   0.0   0:01.03 kworker/u48:3-i915
-  31216 vampire+  32  12 1448.5g 198108 137764 S   0.0   1.2   0:11.32 brave
-  31234 vampire+  32  12   68.7g  52688  36144 S   0.0   0.3   0:00.02 brave
-  31240 vampire+  32  12 1450.3g 131820  88308 S   0.0   0.8   0:00.64 brave
-  31273 root      20   0       0      0      0 I   0.0   0.0   0:00.05 kworker/u48:4-events_unbound
-  31296 root       0 -20       0      0      0 I   0.0   0.0   0:02.12 kworker/u49:1-rtw89_tx_wq
-  31316 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/10:0
-  31318 vampire+  32  12 1448.5g 244820 137340 S   0.0   1.5   0:05.85 brave
-  31347 vampire+  32  12 1448.4g  80508  59152 S   0.0   0.5   0:00.04 brave
-  31530 vampire+  17  -3   14224   3700   3428 S   0.0   0.0   0:00.00 bash
+    545 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_queue
+    546 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_queue
+    547 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nv_open_q
+    578 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-cfg80211
+    724 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/16-processor_thermal_device_pci
+    753 systemd+  32  12   21924  13432  10772 S   0.0   0.1   0:07.36 systemd-resolve
+    756 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia-modeset/kthread_q
+    758 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia-modeset/deferred_close_kthread_q
+    835 message+  32  12   11332   5188   4292 S   0.0   0.0   0:00.03 dbus-broker-lau
+    865 message+  20   0    9000   4848   2584 S   0.0   0.0   0:05.38 dbus-broker
+    866 root      32  12  341468  20876  16700 S   0.0   0.1   0:09.69 NetworkManager
+    868 root      32  12  317576   7904   6956 S   0.0   0.0   0:22.55 accounts-daemon
+    870 avahi     32  12    8620   4612   4132 S   0.0   0.0   0:00.50 avahi-daemon
+    871 root      32  12   14528   7132   6084 S   0.0   0.0   0:03.05 bluetoothd
+    872 root      32  12   84780  10764   7864 S   0.0   0.1   0:11.46 system76-schedu
+    873 root      32  12  889004   7920   6656 S   0.0   0.0   0:00.01 cosmic-greeter-
+    874 root      32  12   13708   2920   2672 S   0.0   0.0   0:00.05 cron
+    877 gnome-r+  32  12  513036  16896  14312 S   0.0   0.1   0:00.07 gnome-remote-de
+    881 root      32  12   39184  19584   8640 S   0.0   0.1   0:00.13 networkd-dispat
+    882 root      32  12  308784   8092   4296 S   0.0   0.1   0:23.41 nvidia-powerd
+    895 polkitd   32  12  384328  10748   7836 S   0.0   0.1   0:01.22 polkitd
+    899 root      32  12  317920   8200   7200 S   0.0   0.1   0:00.13 power-profiles-
+    905 root      32  12  314188   7088   6372 S   0.0   0.0   0:00.08 switcheroo-cont
+    912 root      32  12   18396   9220   7920 S   0.0   0.1   0:01.05 systemd-logind
+    917 root      32  12  429192  10636   9504 S   0.0   0.1   0:08.89 thermald
+    920 root      32  12  469420  13520  10792 S   0.0   0.1   0:00.92 udisksd
+    922 root      32  12   18408  11712   9912 S   0.0   0.1   0:05.50 wpa_supplicant
+    933 avahi     32  12    8432   1500   1148 S   0.0   0.0   0:00.00 avahi-daemon
+    958 root      32  12  322540  11032   7640 S   0.0   0.1   0:02.51 upowerd
+    987 syslog    32  12  222540   6700   4600 S   0.0   0.0   0:31.51 rsyslogd
+    998 root      32  12  392220  12976  10756 S   0.0   0.1   0:00.35 ModemManager
+   1045 root      32  12  380108 189812  55312 S   0.0   1.2   0:12.14 execsnoop-bpfcc
+   1046 root     -51   0       0      0      0 S   0.0   0.0   3:58.16 irq/148-rtw89_pci
+   1115 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/149-nvidia
+   1117 root      20   0       0      0      0 S   0.0   0.0   0:00.30 nv_queue
+   1149 root      -2   0       0      0      0 S   0.0   0.0   0:00.00 psimon
+   1166 nvidia-+  32  12    3336   2084   1908 S   0.0   0.0   0:00.00 nvidia-persiste
+   1184 jenkins   32  12   10.7g 585628  15908 S   0.0   3.6   2:24.38 java
+   1193 root      32  12 1357484  43816  21760 S   0.0   0.3   0:24.64 tailscaled
+   1195 root      32  12 2192188  37760  24068 S   0.0   0.2   0:38.91 containerd
+   1217 vampire+  20   0   21304  12480   9380 S   0.0   0.1   0:00.98 systemd
+   1244 _chrony   32  12   22700   9172   5352 S   0.0   0.1   0:00.89 chronyd
+   1249 _chrony   32  12   11276   3220   2752 S   0.0   0.0   0:00.01 chronyd
+   1254 vampire+  20   0   21204   3620   1880 S   0.0   0.0   0:00.00 (sd-pam)
+   1283 root      32  12   12032   7868   6736 S   0.0   0.0   0:00.01 sshd
+   1308 mysql     32  12 2377268 363252  12412 S   0.0   2.3   4:38.19 mysqld
+   1372 vampire+  29   9    9672   4144   3696 S   0.0   0.0   0:00.03 dbus-broker-lau
+   1375 vampire+  20   0    6712   4648   2668 S   0.0   0.0   0:01.00 dbus-broker
+   1378 vampire+   5 -15  119100  16856   9464 S   0.0   0.1   0:16.74 pipewire
+   1381 vampire+  11  -9  651060  35800  25516 S   0.0   0.2   1:07.70 wireplumber
+   1382 vampire+   5 -15   93972   6104   5328 S   0.0   0.0   0:00.02 pipewire
+   1383 vampire+   5 -15  193400  17884   9124 S   0.0   0.1   0:44.99 pipewire-pulse
+   1385 rtkit     21   1   22948   3504   3204 S   0.0   0.0   0:00.40 rtkit-daemon
+   1511 root      32  12    3864   3836   3324 S   0.0   0.0   0:00.01 greetd
+   1528 root      20   0       0      0      0 S   0.0   0.0   0:00.02 UVM global queue
+   1529 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM deferred release queue
+   1530 root      20   0       0      0      0 S   0.0   0.0   0:00.01 UVM Tools Event Queue
+   1642 root      10 -10       0      0      0 S   0.0   0.0   0:00.01 krfcommd
+   1735 root      32  12    7752   7724   6352 S   0.0   0.0   0:00.07 greetd
+   1819 root      32  12  895216   8768   6816 S   0.0   0.1   0:04.60 pop-system-upda
+   1821 root      32  12 2471636  74832  49672 S   0.0   0.5   0:05.97 dockerd
+   1845 root      32  12   11168   1760    780 S   0.0   0.0   0:00.00 nginx
+   1847 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1848 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1849 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1850 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1851 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1852 www-data  32  12   12892   4512   3172 S   0.0   0.0   0:00.00 nginx
+   1853 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1855 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1856 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1857 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1858 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1859 www-data  32  12   12892   4516   3176 S   0.0   0.0   0:00.00 nginx
+   1897 root      32  12  153668  11920   9436 S   0.0   0.1   0:00.62 system76-schedu
+   3019 vampire+  29   9  321052   9860   8504 S   0.0   0.1   0:00.56 gnome-keyring-d
+   3024 vampire+  32  12  144784   2616   2432 S   0.0   0.0   0:00.09 cosmic-session
+   3116 vampire+  32  12  669400  16672  15056 S   0.0   0.1   0:14.61 Xwayland
+   3140 vampire+  32  12  493620   9124   7424 S   0.0   0.1   0:05.86 cosmic-settings
+   3159 vampire+  29   9    2808   1756   1748 S   0.0   0.0   0:00.01 sh
+   3161 root      32  12    2728   1944   1808 S   0.0   0.0   0:05.25 acpid
+   3169 vampire+  29   9  902460  55328  40920 S   0.0   0.3   0:00.53 evolution-alarm
+   3189 vampire+  29   9  162660   7240   6544 S   0.0   0.0   0:00.01 gcr-ssh-agent
+   3224 vampire+  29   9  382940   7872   7216 S   0.0   0.0   0:00.02 at-spi-bus-laun
+   3231 vampire+  29   9  314544   6568   6072 S   0.0   0.0   0:00.01 agent
+   3244 vampire+  29   9   62140  30468  16516 S   0.0   0.2   0:00.80 applet.py
+   3245 vampire+  20   0    9544   4112   3740 S   0.0   0.0   0:00.00 dbus-broker-lau
+   3253 vampire+  20   0    4940   2936   2704 S   0.0   0.0   0:00.00 dbus-broker
+   3265 vampire+  32  12 1115152  11992   9092 S   0.0   0.1   0:01.21 cosmic-notifica
+   3269 vampire+  29   9  230116   5864   5340 S   0.0   0.0   0:00.01 dconf-service
+   3270 vampire+  32  12 1928456  20460  14084 S   0.0   0.1   0:00.72 cosmic-app-libr
+   3272 vampire+  32  12 2132932  25340  21776 S   0.0   0.2   0:05.10 cosmic-launcher
+   3274 vampire+  32  12 3007736  61524  32536 S   0.0   0.4   0:04.77 cosmic-workspac
+   3275 vampire+  29   9  318544   8432   7568 S   0.0   0.1   0:00.04 gvfsd
+   3282 vampire+  32  12 2065412  24944  17964 S   0.0   0.2   0:09.02 cosmic-osd
+   3285 vampire+  32  12  156452   3940   3692 S   0.0   0.0   0:00.01 cosmic-bg
+   3293 vampire+  32  12  414984   5568   5040 S   0.0   0.0   0:00.36 cosmic-idle
+   3298 vampire+  29   9  463992   7420   6620 S   0.0   0.0   0:00.01 gvfsd-fuse
+   3444 vampire+  35  15    3592   2128   1928 S   0.0   0.0   0:00.07 bwrap
+   3457 vampire+  35  15    3592   2120   1928 S   0.0   0.0   0:00.06 bwrap
+   3461 vampire+  35  15    3592   2128   1928 S   0.0   0.0   0:00.06 bwrap
+   3465 vampire+  32  12 1347548  68632  26196 S   0.0   0.4   0:25.38 cosmic-applet-a
+   3467 vampire+  32  12 1398084   7028   6452 S   0.0   0.0   0:00.10 pop-launcher
+   3474 vampire+  29   9  773096  19440  15668 S   0.0   0.1   0:01.46 xdg-desktop-por
+   3478 vampire+  32  12 1234172  27724  21764 S   0.0   0.2   0:06.75 cosmic-applet-b
+   3482 vampire+  32  12 1165032  32672  25764 S   0.0   0.2   0:09.33 cosmic-applet-b
+   3490 vampire+  32  12 1234700  34604  25372 S   0.0   0.2   0:02.42 cosmic-applet-n
+   3500 vampire+  32  12 1164528  28764  20700 S   0.0   0.2   0:00.22 cosmic-applet-n
+   3519 vampire+  32  12 1164136  28680  20748 S   0.0   0.2   0:00.14 cosmic-applet-s
+   3521 vampire+  29   9  614576   7632   6860 S   0.0   0.0   0:00.33 xdg-document-po
+   3525 vampire+  32  12 1232168  31404  23208 S   0.0   0.2   0:01.59 cosmic-applet-t
+   3543 vampire+  32  12 1274804  14432   5860 S   0.0   0.1   0:00.35 cosmic-toplevel
+   3548 vampire+  32  12 1180408  36496  22612 S   0.0   0.2   0:04.16 cosmic-app-list
+   3554 vampire+  32  12 1164860  29044  20352 S   0.0   0.2   0:03.62 cosmic-applet-m
+   3557 vampire+  29   9  313596   6340   5828 S   0.0   0.0   0:00.02 xdg-permission-
+   3559 vampire+  32  12 1164520  29628  21416 S   0.0   0.2   0:00.82 cosmic-applet-t
+   3564 vampire+  29   9  314164   7208   6584 S   0.0   0.0   0:00.28 flatpak-session
+   3581 root      20   0    2712   2096   1984 S   0.0   0.0   0:00.00 fusermount3
+   3582 vampire+  29   9    4444    908    696 S   0.0   0.0   0:00.00 p11-kit-server
+   3597 vampire+  29   9  422544  24080  16624 S   0.0   0.1   0:00.93 xdg-desktop-por
+   3614 vampire+  32  12    3592   2000   1860 S   0.0   0.0   0:00.00 bwrap
+   3616 vampire+  32  12  313700   6072   5580 S   0.0   0.0   0:00.02 xdg-dbus-proxy
+   3618 vampire+  32  12    3592   2004   1864 S   0.0   0.0   0:00.00 bwrap
+   3620 vampire+  32  12    3592   2004   1864 S   0.0   0.0   0:00.00 bwrap
+   3621 vampire+  32  12  239968   6168   5680 S   0.0   0.0   0:00.02 xdg-dbus-proxy
+   3622 vampire+  32  12  239968   6160   5700 S   0.0   0.0   0:00.01 xdg-dbus-proxy
+   3623 vampire+  29   9 1279600  40404  32084 S   0.0   0.3   0:00.21 evolution-sourc
+   3630 vampire+  32  12    3592   1608   1348 S   0.0   0.0   0:00.07 bwrap
+   3632 vampire+  32  12    3672   1620   1348 S   0.0   0.0   0:00.06 bwrap
+   3634 vampire+  32  12    3592   1600   1348 S   0.0   0.0   0:00.06 bwrap
+   3646 vampire+  32  12 1465684  33536  22056 S   0.0   0.2   0:02.07 cosmic-ext-appl
+   3647 vampire+  32  12 1122828  28716  16972 S   0.0   0.2   0:07.40 cosmic-ext-appl
+   3648 vampire+  20   0  550964  23252  19560 S   0.0   0.1   0:00.12 goa-daemon
+   3649 vampire+  20   0  236092   7660   6916 S   0.0   0.0   0:00.01 at-spi2-registr
+   3659 vampire+  20   0  393408   9440   8348 S   0.0   0.1   0:00.78 goa-identity-se
+   3667 vampire+  20   0 2855400  92056  35384 S   0.0   0.6   0:08.76 xdg-desktop-por
+   3849 vampire+  29   9  957312  16732  13292 S   0.0   0.1   0:00.39 cosmic-applet-s
+   3921 vampire+  29   9  467196  10920   9248 S   0.0   0.1   0:00.14 gvfs-udisks2-vo
+   4011 vampire+  29   9 1435692  23168  19616 S   0.0   0.1   0:00.27 evolution-calen
+   4033 vampire+  29   9  314076   6772   6152 S   0.0   0.0   0:00.02 gvfs-mtp-volume
+   4044 root      32  12  139616  48360  19980 S   0.0   0.3   0:00.74 python3
+   4073 vampire+  29   9  829728  27660  23576 S   0.0   0.2   0:00.17 evolution-addre
+   4080 vampire+  29   9  393664   8172   7164 S   0.0   0.1   0:01.42 gvfs-afc-volume
+   4103 vampire+  29   9  315044   7092   6348 S   0.0   0.0   0:00.03 gvfs-gphoto2-vo
+   4128 vampire+  29   9  314056   6700   6080 S   0.0   0.0   0:00.02 gvfs-goa-volume
+   4141 root      20   0       0      0      0 S   0.0   0.0   0:00.00 vidmem lazy free
+   4142 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM GPU1 BH
+   4143 root      20   0       0      0      0 S   0.0   0.0   0:00.00 UVM GPU1 KC
+   4168 vampire+  29   9 5771596  63972  29880 S   0.0   0.4   0:03.31 mpvpaper
+   4249 vampire+  32  12    2808   1820   1812 S   0.0   0.0   0:00.01 xdg-open
+   4324 vampire+  32  12   14224   2336   2328 S   0.0   0.0   0:00.00 brave-browser-s
+   4328 vampire+  32  12   12712   1840   1832 S   0.0   0.0   0:00.00 cat
+   4329 vampire+  32  12   12712   1860   1832 S   0.0   0.0   0:00.00 cat
+   4332 vampire+  32  12   52.0g   3696   3592 S   0.0   0.0   0:00.01 chrome_crashpad
+   4334 vampire+  32  12   52.0g   3156   3128 S   0.0   0.0   0:00.00 chrome_crashpad
+   4342 vampire+  32  12   52.7g  57760  56420 S   0.0   0.4   0:00.04 brave
+   4343 vampire+  32  12   52.7g  61364  56236 S   0.0   0.4   0:00.04 brave
+   4345 vampire+  32  12   52.7g   9272   3904 S   0.0   0.1   0:01.76 brave
+   4375 vampire+  32  12   53.3g 189432 103680 S   0.0   1.2  46:49.32 brave
+   4378 vampire+  32  12   52.5g 137240 116164 S   0.0   0.9  18:50.55 brave
+   4388 vampire+  32  12   52.8g  52804  45248 S   0.0   0.3   0:08.89 brave
+   4420 vampire+  32  12 1448.5g 243356 141772 S   0.0   1.5   1:24.90 brave
+   4452 vampire+  32  12 1450.4g 101756  86336 S   0.0   0.6   9:47.44 brave
+   4630 vampire+  26   6   52.5g  83220  81680 S   0.0   0.5   0:52.59 brave
+  26830 vampire+  32  12 1448.5g 162952 124276 S   0.0   1.0   4:29.58 brave
+  27342 vampire+  32  12 1450.4g 327704 146992 S   0.0   2.0   6:58.24 brave
+  27769 root      35  15  641184  43616  38388 S   0.0   0.3   0:05.13 fwupd
+  28482 vampire+  17  -3 1410.0g 199640 125132 S   0.0   1.2   1:46.88 code
+  28487 vampire+  17  -3   32.5g  48552  39872 S   0.0   0.3   0:00.04 code
+  28488 vampire+  17  -3   48.5g  48548  39964 S   0.0   0.3   0:00.04 code
+  28490 vampire+  17  -3   48.5g  12788   4088 S   0.0   0.1   0:00.06 code
+  28507 vampire+  17  -3   32.0g   2740   2400 S   0.0   0.0   0:00.00 chrome_crashpad
+  28523 vampire+  17  -3   33.0g 126896  59352 S   0.0   0.8   1:44.66 code
+  28533 vampire+  20   0   48.3g  75352  62504 S   0.0   0.5   0:12.41 code
+  28575 vampire+  17  -3 1414.8g 483428 107884 S   0.0   3.0   6:20.76 code
+  28594 vampire+  20   0 1393.6g  97656  77972 S   0.0   0.6   0:21.90 code
+  28595 vampire+  20   0 1409.6g 103900  75176 S   0.0   0.6   0:18.02 code
+  28897 vampire+  20   0 1391.9g  89920  66664 S   0.0   0.6   0:02.08 code
+  28944 vampire+  29   9  240996   7088   6088 S   0.0   0.0   0:00.14 gvfsd-metadata
+  29128 vampire+  32  12 1473.2g 680252 164764 S   0.0   4.2  39:04.05 brave
+  29475 vampire+  17  -3 1931164 135272  75412 S   0.0   0.8   1:11.21 cosmic-term
+  29491 vampire+  17  -3   23696  10832   5648 S   0.0   0.1   0:01.56 zsh
+  29503 vampire+  17  -3   17080   4148   2148 S   0.0   0.0   0:00.00 zsh
+  29883 vampire+  17  -3   19824   6244   1956 S   0.0   0.0   0:00.00 zsh
+  29884 vampire+  17  -3   19808   6012   1748 S   0.0   0.0   0:00.20 zsh
+  29886 vampire+  17  -3    5892   2412   1796 S   0.0   0.0   0:01.06 gitstatusd-linu
+  30396 vampire+  17  -3 1435876  17512   7684 T   0.0   0.1   0:00.07 MainThread
+  30407 vampire+  17  -3   16.6g 565964 144008 T   0.0   3.5   6:54.18 MainThread
+  30511 vampire+  17  -3 1160948  38004  29668 T   0.0   0.2   0:00.12 uv
+  30532 vampire+  17  -3  368364  56608  14460 T   0.0   0.4   0:01.22 python
+  31154 vampire+  20   0 1407.9g  86796  62780 S   0.0   0.5   0:02.11 code
+  32912 vampire+  20   0 1407.9g  89220  66024 S   0.0   0.6   0:00.82 code
+  34368 vampire+  17  -3 3680924  84428  38456 S   0.0   0.5   0:38.46 cosmic-files
+  34560 vampire+  17  -3 1292788 143528  40356 S   0.0   0.9   0:34.65 evince
+  34567 vampire+  20   0  230076   5916   5448 S   0.0   0.0   0:00.01 evinced
+  35687 root      20   0       0      0      0 I   0.0   0.0   0:02.15 kworker/8:0-mm_percpu_wq
+  36209 vampire+  17  -3 1762756  94032  43952 S   0.0   0.6   0:08.37 cosmic-term
+  36239 vampire+  17  -3   23832  11020   5740 S   0.0   0.1   0:01.99 zsh
+  36243 vampire+  17  -3   17132   4172   2148 S   0.0   0.0   0:00.00 zsh
+  36617 vampire+  17  -3   19932   6324   1972 S   0.0   0.0   0:00.00 zsh
+  36618 vampire+  17  -3   19916   6012   1684 S   0.0   0.0   0:00.18 zsh
+  36620 vampire+  17  -3    5888   2268   1796 S   0.0   0.0   0:00.89 gitstatusd-linu
+  36930 vampire+  17  -3 1762176  91332  44004 S   0.0   0.6   0:11.32 cosmic-term
+  36960 vampire+  17  -3   23796  10932   5744 S   0.0   0.1   0:03.04 zsh
+  36964 vampire+  17  -3   17140   4180   2148 S   0.0   0.0   0:00.00 zsh
+  37339 vampire+  17  -3   19940   6312   1956 S   0.0   0.0   0:00.00 zsh
+  37341 vampire+  17  -3   19924   6076   1740 S   0.0   0.0   0:00.18 zsh
+  37342 vampire+  17  -3    5848   2780   1796 S   0.0   0.0   0:00.91 gitstatusd-linu
+  37936 vampire+  32  12 1448.5g 203896 136244 S   0.0   1.3   0:19.49 brave
+  40370 vampire+  17  -3 1435876  17932   7708 T   0.0   0.1   0:00.06 MainThread
+  40381 vampire+  17  -3   13.9g 318820 135536 T   0.0   2.0   0:07.73 MainThread
+  40509 vampire+  17  -3 1100056  43384  30208 T   0.0   0.3   0:00.21 uv
+  40541 vampire+  17  -3  294596  56252  14296 T   0.0   0.3   0:01.13 python
+  40847 root      20   0       0      0      0 I   0.0   0.0   0:01.20 kworker/10:0-mm_percpu_wq
+  40999 vampire+  20   0   31472   4064   2940 S   0.0   0.0   0:01.58 pet
+  41124 vampire+  20   0 1393.6g 112268  76568 S   0.0   0.7   0:40.86 code
+  41146 vampire+  20   0   20528   9868   4920 S   0.0   0.1   0:01.79 zsh
+  41161 vampire+  20   0 1395.2g 436944  71864 S   0.0   2.7   0:34.85 code
+  41410 vampire+  20   0   19808   6176   1984 S   0.0   0.0   0:00.00 zsh
+  41411 vampire+  20   0   19792   5836   1652 S   0.0   0.0   0:00.13 zsh
+  41414 vampire+  20   0   19892   6584   2240 S   0.0   0.0   0:00.00 zsh
+  41419 vampire+  20   0    5860   2180   1796 S   0.0   0.0   0:00.68 gitstatusd-linu
+  41472 vampire+  20   0 1391.9g  87552  63260 S   0.0   0.5   0:01.56 code
+  41997 vampire+  20   0 1391.9g 136412  68040 S   0.0   0.8   0:03.93 code
+  41998 vampire+  20   0 1391.9g 153100  66604 S   0.0   1.0   0:05.59 code
+  42017 vampire+  20   0 1391.9g 114732  65932 S   0.0   0.7   0:01.21 code
+  42173 vampire+  32  12 1448.5g 342896 151796 S   0.0   2.1   5:36.30 brave
+  44055 vampire+  32  12 1448.5g 147404 117960 S   0.0   0.9   0:06.78 brave
+  44097 vampire+  32  12 1448.5g 302576 152556 S   0.0   1.9   2:21.89 brave
+  44668 vampire+  32  12 1448.5g 117544 105580 S   0.0   0.7   0:00.96 brave
+  45063 vampire+  32  12 1448.5g 149808 126340 S   0.0   0.9   0:20.56 brave
+  45086 vampire+  17  -3  626064  67648  18000 S   0.0   0.4   0:27.20 post-planner
+  45105 vampire+  32  12 1448.5g 354228 152880 S   0.0   2.2   9:58.90 brave
+  45822 root      20   0       0      0      0 I   0.0   0.0   0:01.17 kworker/9:0-events
+  45983 root      20   0       0      0      0 I   0.0   0.0   0:00.60 kworker/1:0-mm_percpu_wq
+  47360 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/7:0-events
+  47370 root      20   0       0      0      0 I   0.0   0.0   0:00.72 kworker/2:2-events
+  47914 root      20   0       0      0      0 I   0.0   0.0   0:29.90 kworker/u48:2-events_unbound
+  47986 root      20   0       0      0      0 I   0.0   0.0   0:00.30 kworker/7:2-events
+  48404 vampire+  32  12 1452.3g 325848 144348 S   0.0   2.0   0:35.92 brave
+  48565 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0-events
+  48877 vampire+  32  12 1448.5g 138968 118384 S   0.0   0.9   0:05.62 brave
+  49165 vampire+  32  12 1448.5g 122976 106736 S   0.0   0.8   0:00.41 brave
+  49182 vampire+  32  12 1450.3g 148112 111868 S   0.0   0.9   0:13.91 brave
+  49513 vampire+  32  12 1448.5g 413004 155532 S   0.0   2.6  17:19.80 brave
+  51403 root      20   0       0      0      0 I   0.0   0.0   0:00.11 kworker/6:2-events
+  51511 root      20   0       0      0      0 I   0.0   0.0   0:00.19 kworker/5:0-events
+  52867 root      20   0       0      0      0 I   0.0   0.0   0:00.10 kworker/2:1-events
+  52868 root      20   0       0      0      0 I   0.0   0.0   0:14.49 kworker/0:1-i915-unordered
+  53658 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/5:2-mm_percpu_wq
+  53669 root      32  12   42684  11704   9488 S   0.0   0.1   0:00.03 cupsd
+  53673 cups-br+  32  12  268512  17348  14268 S   0.0   0.1   0:00.05 cups-browsed
+  53833 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/1:1-events
+  54501 root      20   0       0      0      0 I   0.0   0.0   0:00.05 kworker/4:1-events
+  54502 root      20   0       0      0      0 I   0.0   0.0   0:00.05 kworker/6:0-i915-unordered
+  54645 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/8:2-events
+  54702 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/10:2-mm_percpu_wq
+  54873 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/9:1-events
+  55041 root      20   0       0      0      0 I   0.0   0.0   0:00.17 kworker/11:2-events
+  55146 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/11:3-mm_percpu_wq
+  55168 root      20   0       0      0      0 I   0.0   0.0   0:00.11 kworker/4:2-mm_percpu_wq
+  55174 root      20   0       0      0      0 I   0.0   0.0   0:05.04 kworker/u48:8-flush-259:0
+  55189 root      20   0       0      0      0 I   0.0   0.0   0:03.20 kworker/u48:23-i915
+  55195 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 irq/136-mei_me
+  55200 root      20   0       0      0      0 I   0.0   0.0   0:04.66 kworker/0:3-i915-unordered
+  55234 root      20   0       0      0      0 S   0.0   0.0   0:00.00 nvidia
+  55508 vampire+  32  12 1448.5g 265328 125868 S   0.0   1.6   0:14.49 brave
+  55548 root       0 -20       0      0      0 I   0.0   0.0   0:03.46 kworker/u49:2-rtw89_tx_wq
+  55620 vampire+  32  12 1448.5g 112276  97480 S   0.0   0.7   0:00.18 brave
+  55640 vampire+  32  12 1448.5g 150564 115476 S   0.0   0.9   0:01.86 brave
+  55674 vampire+  32  12 1448.5g 152524 121416 S   0.0   0.9   0:01.49 brave
+  56017 root       0 -20       0      0      0 D   0.0   0.0   0:02.48 kworker/u49:0+i915_flip
+  56382 root       0 -20       0      0      0 I   0.0   0.0   0:01.05 kworker/u49:3-rtw89_tx_wq
+  56389 root      20   0       0      0      0 I   0.0   0.0   0:00.73 kworker/u48:0-flush-259:0
+  56506 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/10:1
+  56604 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/1:2
+  56618 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/8:1
+  56619 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/5:1-events
+  56621 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/7:1-events
+  56635 vampire+  32  12 1450.3g 120988  86816 S   0.0   0.8   0:00.39 brave
+  56676 vampire+  32  12 1448.4g  70872  59552 S   0.0   0.4   0:00.07 brave
+  56705 vampire+  32  12 1450.3g 105952  85764 S   0.0   0.7   0:00.16 brave
+  56719 vampire+  17  -3   14224   3716   3440 S   0.0   0.0   0:00.00 bash

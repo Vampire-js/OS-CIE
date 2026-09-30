@@ -5,6 +5,6 @@ locality.json
 lscpu.txt
 ps-eLf.txt
 results.json
-strace-c.txt
 strace-command-output.txt
+strace-c.txt
 top.txt

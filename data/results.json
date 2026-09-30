@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-09-17T21:52:01+05:30",
+  "captured_at": "2026-09-30T06:21:14+05:30",
   "cpu": {
     "architecture": "x86_64",
     "op_modes": "32-bit, 64-bit",
@@ -26,29 +26,49 @@
   },
   "memory": {
     "total": "15Gi",
-    "used": "9.4Gi",
-    "free": "1.4Gi",
-    "shared": "1.8Gi",
-    "buff_cache": "7.4Gi",
-    "available": "5.9Gi",
-    "used_percent": 61.4,
+    "used": "11Gi",
+    "free": "2.2Gi",
+    "shared": "1.2Gi",
+    "buff_cache": "4.4Gi",
+    "available": "4.2Gi",
+    "used_percent": 72.6,
     "swap_total": "15Gi",
-    "swap_used": "0B",
-    "swap_free": "15Gi"
+    "swap_used": "900Mi",
+    "swap_free": "14Gi"
   },
   "processes": [
     {
-      "pid": 2305,
+      "pid": 3081,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 33.3,
+      "memory_percent": 0.5,
+      "time": "86:09.08",
+      "command": "cosmic-comp"
+    },
+    {
+      "pid": 3814,
       "user": "vampire+",
       "state_code": "S",
       "state": "Sleeping",
       "cpu_percent": 16.7,
-      "memory_percent": 1.1,
-      "time": "61:06.70",
-      "command": "cosmic-comp"
+      "memory_percent": 0.6,
+      "time": "35:09.07",
+      "command": "mpvpaper"
     },
     {
-      "pid": 31536,
+      "pid": 4330,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 16.7,
+      "memory_percent": 3.7,
+      "time": "46:03.64",
+      "command": "brave"
+    },
+    {
+      "pid": 56725,
       "user": "vampire+",
       "state_code": "R",
       "state": "Running",
@@ -58,34 +78,14 @@
       "command": "top"
     },
     {
-      "pid": 2884,
+      "pid": 3268,
       "user": "vampire+",
       "state_code": "S",
       "state": "Sleeping",
       "cpu_percent": 8.3,
-      "memory_percent": 1.2,
-      "time": "24:09.07",
-      "command": "mpvpaper"
-    },
-    {
-      "pid": 28483,
-      "user": "vampire+",
-      "state_code": "S",
-      "state": "Sleeping",
-      "cpu_percent": 8.3,
-      "memory_percent": 0.8,
-      "time": "1:32.52",
-      "command": "cosmic-term"
-    },
-    {
-      "pid": 30209,
-      "user": "root",
-      "state_code": "I",
-      "state": "Idle kernel thread",
-      "cpu_percent": 8.3,
-      "memory_percent": 0.0,
-      "time": "0:06.39",
-      "command": "kworker/u48:1-i915"
+      "memory_percent": 0.3,
+      "time": "2:06.74",
+      "command": "cosmic-panel"
     }
   ],
   "locality": {
@@ -94,26 +94,26 @@
     "matrix_bytes": 67108864,
     "trials": 7,
     "row_major_ms": [
-      13.502563,
-      20.530401,
-      14.684977,
-      15.594544,
-      14.373776,
-      11.805064,
-      10.790532
+      13.8561,
+      17.816632,
+      14.002144,
+      17.34306,
+      15.657933,
+      18.984774,
+      15.148677
     ],
     "column_major_ms": [
-      452.409195,
-      466.269798,
-      463.307713,
-      482.207285,
-      460.224659,
-      416.591919,
-      264.166637
+      479.450499,
+      492.11284,
+      478.717596,
+      509.127106,
+      489.886858,
+      418.470054,
+      416.627839
     ],
-    "row_median_ms": 14.373776,
-    "column_median_ms": 460.224659,
-    "column_to_row_ratio": 32.018355,
+    "row_median_ms": 15.657933,
+    "column_median_ms": 479.450499,
+    "column_to_row_ratio": 30.620293,
     "checksum": 2097144125
   },
   "commands": [

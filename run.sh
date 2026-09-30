@@ -5,11 +5,11 @@ cd "$(dirname "$0")"
 mkdir -p bin data
 
 date --iso-8601=seconds > data/captured-at.txt
-LC_ALL=C lscpu > data/lscpu.txt
-LC_ALL=C free -h > data/free-h.txt
-LC_ALL=C top -b -n 1 -w 512 > data/top.txt
-LC_ALL=C ps -eLf > data/ps-eLf.txt
-LC_ALL=C strace -c -o data/strace-c.txt /bin/ls data > data/strace-command-output.txt
+lscpu > data/lscpu.txt
+free -h > data/free-h.txt
+top -b -n 1 -w 512 > data/top.txt
+ps -eLf > data/ps-eLf.txt
+strace -c -o data/strace-c.txt /bin/ls data > data/strace-command-output.txt
 
 cat > data/commands.txt <<'EOF'
 lscpu > data/lscpu.txt
