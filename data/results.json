@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-09-30T06:21:14+05:30",
+  "captured_at": "2026-09-30T06:51:31+05:30",
   "cpu": {
     "architecture": "x86_64",
     "op_modes": "32-bit, 64-bit",
@@ -27,65 +27,65 @@
   "memory": {
     "total": "15Gi",
     "used": "11Gi",
-    "free": "2.2Gi",
-    "shared": "1.2Gi",
-    "buff_cache": "4.4Gi",
-    "available": "4.2Gi",
-    "used_percent": 72.6,
+    "free": "2.0Gi",
+    "shared": "1.3Gi",
+    "buff_cache": "4.6Gi",
+    "available": "4.1Gi",
+    "used_percent": 73.6,
     "swap_total": "15Gi",
-    "swap_used": "900Mi",
+    "swap_used": "898Mi",
     "swap_free": "14Gi"
   },
   "processes": [
     {
       "pid": 3081,
       "user": "vampire+",
-      "state_code": "S",
-      "state": "Sleeping",
-      "cpu_percent": 33.3,
+      "state_code": "R",
+      "state": "Running",
+      "cpu_percent": 27.3,
       "memory_percent": 0.5,
-      "time": "86:09.08",
+      "time": "93:30.01",
       "command": "cosmic-comp"
-    },
-    {
-      "pid": 3814,
-      "user": "vampire+",
-      "state_code": "S",
-      "state": "Sleeping",
-      "cpu_percent": 16.7,
-      "memory_percent": 0.6,
-      "time": "35:09.07",
-      "command": "mpvpaper"
     },
     {
       "pid": 4330,
       "user": "vampire+",
       "state_code": "S",
       "state": "Sleeping",
-      "cpu_percent": 16.7,
-      "memory_percent": 3.7,
-      "time": "46:03.64",
+      "cpu_percent": 9.1,
+      "memory_percent": 3.6,
+      "time": "47:31.32",
       "command": "brave"
     },
     {
-      "pid": 56725,
-      "user": "vampire+",
-      "state_code": "R",
-      "state": "Running",
-      "cpu_percent": 16.7,
-      "memory_percent": 0.0,
-      "time": "0:00.03",
-      "command": "top"
-    },
-    {
-      "pid": 3268,
+      "pid": 4378,
       "user": "vampire+",
       "state_code": "S",
       "state": "Sleeping",
-      "cpu_percent": 8.3,
-      "memory_percent": 0.3,
-      "time": "2:06.74",
-      "command": "cosmic-panel"
+      "cpu_percent": 9.1,
+      "memory_percent": 0.9,
+      "time": "20:09.43",
+      "command": "brave"
+    },
+    {
+      "pid": 4452,
+      "user": "vampire+",
+      "state_code": "S",
+      "state": "Sleeping",
+      "cpu_percent": 9.1,
+      "memory_percent": 0.7,
+      "time": "10:34.30",
+      "command": "brave"
+    },
+    {
+      "pid": 59653,
+      "user": "vampire+",
+      "state_code": "R",
+      "state": "Running",
+      "cpu_percent": 9.1,
+      "memory_percent": 0.0,
+      "time": "0:00.02",
+      "command": "top"
     }
   ],
   "locality": {
@@ -94,26 +94,26 @@
     "matrix_bytes": 67108864,
     "trials": 7,
     "row_major_ms": [
-      13.8561,
-      17.816632,
-      14.002144,
-      17.34306,
-      15.657933,
-      18.984774,
-      15.148677
+      15.792498,
+      17.581983,
+      16.248562,
+      14.602081,
+      18.951136,
+      12.085321,
+      12.20775
     ],
     "column_major_ms": [
-      479.450499,
-      492.11284,
-      478.717596,
-      509.127106,
-      489.886858,
-      418.470054,
-      416.627839
+      497.613801,
+      499.017199,
+      419.084831,
+      361.906666,
+      459.336209,
+      267.722561,
+      270.09678
     ],
-    "row_median_ms": 15.657933,
-    "column_median_ms": 479.450499,
-    "column_to_row_ratio": 30.620293,
+    "row_median_ms": 15.792498,
+    "column_median_ms": 419.084831,
+    "column_to_row_ratio": 26.536956,
     "checksum": 2097144125
   },
   "commands": [

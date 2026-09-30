@@ -14,7 +14,7 @@
     p { margin: 0 0 2.2mm; text-align: justify; }
     .meta { margin-bottom: 3mm; padding-bottom: 2mm; border-bottom: 1px solid #888; font-size: 8.2pt; }
     .intro { margin-bottom: 3mm; }
-    .entry { margin: 2.5mm 0 4mm; break-inside: avoid; }
+    .entry { margin: 2.5mm 0 4mm; }
     .entry-head {
       display: flex;
       justify-content: space-between;
@@ -26,7 +26,7 @@
     }
     .verdict { color: #9a260f; font: 800 8pt "Noto Sans", sans-serif; letter-spacing: .06em; }
     .correct { color: #176b3a; }
-    .row { display: grid; grid-template-columns: 25mm 1fr; gap: 2.5mm; margin: 1.5mm 0; }
+    .row { display: grid; grid-template-columns: 25mm 1fr; gap: 2.5mm; margin: 1.5mm 0; break-inside: avoid; }
     .label { font-weight: 800; }
     pre {
       margin: .8mm 0 0;
@@ -49,7 +49,7 @@
 <body>
   <section class="page">
     <h1>AI Interaction Log</h1>
-    <div class="meta">CIE-1, Computer Organisation &amp; Operating Systems | TE IT | Roll No. 33215, Name Adwaiy Deshpande | Assistant used: GitHub Copilot CLI (GPT-5.6 Sol)</div>
+    <div class="meta">CIE-1, Computer Organisation &amp; Operating Systems | TE IT | Roll No. 33215, Name Adwaiy Deshpande | Roll No. 33203, Name Akshat Kumar | Assistant used: GitHub Copilot CLI (GPT-5.6 Sol)</div>
     <p class="intro">I used AI for four limited tasks: interpreting Linux memory columns, predicting the locality result before running it, explaining an unusual CPU topology, and checking process-state terminology. I did not let it supply measurements. Two answers were too confident and one assumed a conventional CPU layout that this laptop does not have. I kept those failures because they show why every hardware-specific statement in the report was checked against command output.</p>
 
     <article class="entry">
@@ -74,9 +74,6 @@ column-major ms: 399.175 439.497 438.782 442.635 428.977 437.953 425.847
 median:          15.371 ms versus 437.953 ms = 28.49x</pre></div></div>
       <div class="row"><div class="label">Conclusion</div><div>The direction and cache-line explanation were correct, but 16× was not a reliable ceiling. The observed slowdown was 28.49×. The simple line-utilisation argument ignores the 16 KiB stride, TLB pressure, reduced prefetch effectiveness and the contiguous loop's greater opportunity for vectorisation. AI turned one component of the cost into a complete prediction.</div></div>
     </article>
-  </section>
-
-  <section class="page">
     <article class="entry">
       <div class="entry-head"><span>Entry 3</span><span class="verdict">AI ASSUMED WRONG HARDWARE</span></div>
       <div class="row"><div class="label">My prompt</div><div><code>lscpu</code> says 8 cores, 2 threads per core and only 12 CPUs. Shouldn't that be 16 logical CPUs?</div></div>
